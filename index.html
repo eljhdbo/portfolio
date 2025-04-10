@@ -3,279 +3,670 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Elijah Dabo</title>
-    <link rel="stylesheet" href="projet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <script src="projet.js"></script>
+    <title>Portfolio Elijah Dabo | BTS SIO</title>
+    <link rel="stylesheet" href="styles/projet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="scripts/projet.js" defer></script>
 </head>
 <body>
+    <div class="cursor-follower"></div>
+    
     <header>
-        <div class="title">
-            <h1>Portfolio Elijah Dabo</h1>
+        <div class="header-container">
+            <div class="logo">
+                <a href="#accueil" class="logo-link">
+                    <span class="logo-text">ED</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#company" class="nav-link"><i class="fas fa-building"></i> Entreprise</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Réalisations</a></li>
+                    <li><a href="#tech-watch" class="nav-link"><i class="fas fa-rss"></i> Veille</a></li>
+                    <li><a href="#bilan" class="nav-link"><i class="fas fa-chart-line"></i> Bilan</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#company">Entreprise d'Accueil</a></li>
-                <li><a href="#projects">Mes Réalisations</a></li>
-                <li><a href="#tech-watch">Ma Veille Technologique</a></li>
-                <li><a href="#bilan">Bilan</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="home">
+        <!-- Section Accueil -->
+        <section id="accueil" class="active">
             <div class="hero">
                 <div class="hero-content">
-                    <h1>Bienvenue sur mon Portfolio à moi !</h1>
-                    <p>Je m'appelle Elijah Dabo, j'ai 21 ans. Actuellement étudiant en première année de BTS Services Informatiques aux Organisations (SIO) en alterance dans l'entreprise FLEX, j'ai créé ce site pour partager avec vous l'ensemble de mes projets et réalisations. Sur ce site, vous pourrez découvrir mes projets professionnels et scolaires, ainsi que le bilan de ma première année de BTS SIO. J'y présente également ma veille technologique, où je partage mes recherches et découvertes dans le domaine du CLOUD COMPUTING. Merci de votre visite et bonne exploration de mon Portfolio.</p>
-                </div>
-            </div>
-            <div id="about">
-                <div class="about-container">
-                    <div class="about-text">
-                        <h2>Mon Parcours</h2>
-                        <p>
-                            Après avoir obtenu un <strong>Baccalauréat STMG</strong>, où j'ai acquis des notions en CEJM, j'ai intégré le monde du travail. Cette expérience m'a permis de mieux comprendre mes aspirations et de prendre la décision de me réorienter vers un domaine qui m'a toujours attiré : l'informatique. 
-                            Passionné par l'exploration des technologies, c'est le développement qui m'a particulièrement captivé. Aujourd'hui, cette passion m'a conduit à poursuivre mes études à l'<strong>ESIEE-IT</strong> pour approfondir mes compétences et m'épanouir dans ce secteur en constante évolution.
+                    <div class="hero-text">
+                        <h1 class="animate__animated animate__fadeInUp">Elijah Dabo</h1>
+                        <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Développeur en formation BTS SIO SLAM</h2>
+                        <p class="animate__animated animate__fadeInUp animate__delay-2s">
+                            Passionné de développement informatique, en alternance chez FLEX.
                         </p>
+                        <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-3s">
+                            <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                            <a href="documents/cv-elijah-dabo.pdf" download="CV_Elijah_Dabo" class="btn btn-secondary">Télécharger mon CV</a>
+                        </div>
                     </div>
-                    <div class="about-image">
-                        <img src="itescia_2020_ext-nuit_vallet-de-martinis-architectes-hd_1.jpg" alt="Image de Mon Parcours">
+                    <div class="hero-image animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="profile-container">
+                            <div class="profile-blob">
+                                <img src="images/profile-pic.jpg" alt="Elijah Dabo" class="profile-pic">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="cv-download">
-                    <a href="cv-elijah-dabo.pdf" download="CV_Elijah_Dabo" class="cv-link">
-                        Télécharger mon CV
-                    </a>
                 </div>
             </div>
             
-            <div class="languages">
-                <h2>Langages Appris</h2>
-                <div class="languages-boxes">
-                    <div class="language-box">
-                        <img src="HTML5_logo_and_wordmark.svg.png" alt="HTML">
-                        <p>HTML</p>
-                    </div>
-                    <div class="language-box">
-                        <img src="CSS3_logo_and_wordmark.svg.png" alt="CSS">
-                        <p>CSS</p>
-                    </div>
-                    <div class="language-box">
-                        <img src="1200px-Javascript-shield.svg.png" alt="JavaScript">
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="language-box">
-                        <img src="Python-logo-notext.svg.png" alt="Python">
-                        <p>Python</p>
-                    </div>
-                    <div class="language-box">
-                        <img src="Java_Logo.svg.png" alt="Java">
-                        <p>Java</p>
+            <!-- À propos -->
+            <div class="about-section">
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-user-graduate"></i></span>
+                    <h2>Mon Parcours</h2>
+                </div>
+                <div class="about-container">
+                    <div class="about-text">
+                        <p>
+                            Après avoir obtenu un <strong>Baccalauréat STMG</strong>, où j'ai acquis des notions en CEJM, j'ai intégré le monde du travail. Cette expérience m'a permis de mieux comprendre mes aspirations et de prendre la décision de me réorienter vers un domaine qui m'a toujours attiré : l'informatique.
+                        </p>
+                        <p>
+                            Passionné par l'exploration des technologies, c'est le développement qui m'a particulièrement captivé. Aujourd'hui, cette passion m'a conduit à poursuivre mes études à l'<strong>ESIEE-IT</strong> pour approfondir mes compétences et m'épanouir dans ce secteur en constante évolution.
+                        </p>
                     </div>
                 </div>
-                <div class="languages">
-                    <h2>Outils utilisés</h2>
-                    <div class="languages-boxes">
-                        <div class="language-box">
-                            <img src="logo_visualstudio.png" alt="HTML">
-                            <p>Visual Studio</p>
-                        </div>
-                        <div class="language-box">
-                            <img src="logo intellij.png" alt="CSS">
-                            <p>IntelliJ</p>
-                        </div>
-                        <div class="language-box">
-                            <img src="logo_github.png" alt="JavaScript">
-                            <p>GitHub</p>
-                        </div>
-                        <div class="language-box">
-                            <img src="logo_phpmyadmin.png" alt="Python">
-                            <p>PhpMyAdmin</p>
-                        </div>
-                        <div class="language-box">
-                            <img src="SceneBuilderLogo.png" alt="Java">
-                            <p>Scene Builder</p>
+            </div>
+            
+            <!-- Compétences -->
+            <div class="skills-section">
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-code"></i></span>
+                    <h2>Mes Compétences</h2>
+                </div>
+                
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Langages de programmation</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="images/HTML5_logo_and_wordmark.svg.png" alt="HTML">
+                                <span>HTML</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/CSS3_logo_and_wordmark.svg.png" alt="CSS">
+                                <span>CSS</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/1200px-Javascript-shield.svg.png" alt="JavaScript">
+                                <span>JavaScript</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/Python-logo-notext.svg.png" alt="Python">
+                                <span>Python</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/Java_Logo.svg.png" alt="Java">
+                                <span>Java</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="skills-category">
+                        <h3>Outils et environnements</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="images/logo_visualstudio.png" alt="Visual Studio">
+                                <span>Visual Studio</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/logo_intellij.png" alt="IntelliJ">
+                                <span>IntelliJ</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/logo_github.png" alt="GitHub">
+                                <span>GitHub</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/logo_phpmyadmin.png" alt="PhpMyAdmin">
+                                <span>PhpMyAdmin</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/SceneBuilderLogo.png" alt="Scene Builder">
+                                <span>Scene Builder</span>
+                                <div class="skill-level">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact -->
             <div class="contact-section">
-                <h2>Me Contacter</h2>
-                <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/votre-profil" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:votre.email@example.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Mail
-                    </a>
-                    <a href="https://github.com/votre-username" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="cv-elijah-dabo.pdf" download class="contact-link">
-                        <i class="fas fa-download"></i> Télécharger mon CV
-                    </a>
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-envelope"></i></span>
+                    <h2>Me Contacter</h2>
                 </div>
-            </div>
-        </section>
-
-        <section id="company">
-            <h2>
-                <img src="Logo Flex Portfolio.png" alt="Logo de Flex" class="company-logo">
-                FLEX
-            </h2>
-            <p>
-                Flex est une filiale de Flex-Flux, disposant d'une autonomie juridique, administrative et financière tout en restant liée à sa société mère par un contrat de prestation. Les deux entités évoluent dans le domaine du transport public et des services associés. Flex-Flux, basée à Asnières-sur-Seine, se spécialise dans l'assistance aux exploitations de transport, offrant des services tels que la mise à disposition d'agents, la prévention, l'humanisation, et le développement de logiciels pour la gestion du transport. En collaboration avec des acteurs majeurs (SAVAC, Transdev, SNCF, RATP), Flex bénéficie de l'expertise de Flex-Flux pour proposer des solutions innovantes et adaptées, consolidant leur position dans le secteur.
-            </p>
-                <div id="si-place">
-                    <h3>Ma Place dans le SI</h3>
-                    <p>Voici une représentation visuelle de ma position dans le Système d’Information de l’entreprise FLEX :</p>
-                    <img src="Capture d'écran 2024-11-25 232242.png" alt="Ma place dans le SI" class="si-image">
-                </div> 
-                <div class="company-tools">
-                    <h3>Outils Principaux</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">Excel</div>
-                        <div class="tool-item">FlexHub</div>
-                        <div class="tool-item">HTML</div>
-                        <div class="tool-item">JavaScript</div>
-                        <div class="tool-item">CSS</div>
-                        <div class="tool-item">Django</div>
+                <div class="contact-container">
+                    <div class="contact-cards">
+                        <a href="https://www.linkedin.com/in/votre-profil" target="_blank" class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <h3>LinkedIn</h3>
+                            <p>Retrouvez mon profil professionnel</p>
+                        </a>
+                        <a href="mailto:votre.email@example.com" class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>Contactez-moi directement</p>
+                        </a>
+                        <a href="https://github.com/votre-username" target="_blank" class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p>Explorez mes projets</p>
+                        </a>
+                        <a href="documents/cv-elijah-dabo.pdf" download="CV_Elijah_Dabo" class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>CV</h3>
+                            <p>Téléchargez mon CV</p>
+                        </a>
                     </div>
-                </div>                
-                <div id="missions">
-                    <h3>Mes Missions en Entreprise :</h3>
-                    <ul class="missions-list">
-                        <li>
-                            <h4>Conception de solutions adaptées</h4>
-                            <p>Avec l'équipe d'alternants nous analysons les besoins exprimés par nos clients partenaires tels que la SNCF, SAVAC, RATP et Lacroix, afin de développer des outils personnalisés qui répondent efficacement aux attentes de leurs usagers.</p>
-                        </li>
-                        <li>
-                            <h4>Amélioration des systèmes existants</h4>
-                            <p>En collaboration avec les developpeurs externes, nous modernisons et optimisons les fonctionnalités des logiciels utilisés par nos clients, garantissant une expérience utilisateur fluide et intuitive.</p>
-                        </li>
-                        <li>
-                            <h4>Recherche d'automatisation des processus métier</h4>
-                            <p>Nous cherchons des solutions d'automatisation pour simplifier les tâches récurrentes en entreprise, augmentant ainsi la productivité et la satisfaction des utilisateurs finaux.</p>
-                        </li>
-                    </ul>
-                </div>                                      
-            </section>
+                </div>
+            </div>
+        </section>
 
+        <!-- Section Entreprise -->
+        <section id="company">
+            <div class="company-hero">
+                <div class="company-header">
+                    <img src="images/Logo_Flex_Portfolio.png" alt="Logo de Flex" class="company-logo">
+                    <h1>FLEX</h1>
+                </div>
+                <div class="company-subtitle">Mon entreprise d'accueil en alternance</div>
+            </div>
+            
+            <div class="company-description">
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-building"></i></span>
+                    <h2>Présentation</h2>
+                </div>
+                <div class="description-card">
+                    <p>
+                        Flex est une filiale de Flex-Flux, disposant d'une autonomie juridique, administrative et financière tout en restant liée à sa société mère par un contrat de prestation. Les deux entités évoluent dans le domaine du transport public et des services associés.
+                    </p>
+                    <p>
+                        Flex-Flux, basée à Asnières-sur-Seine, se spécialise dans l'assistance aux exploitations de transport, offrant des services tels que la mise à disposition d'agents, la prévention, l'humanisation, et le développement de logiciels pour la gestion du transport.
+                    </p>
+                    <p>
+                        En collaboration avec des acteurs majeurs (SAVAC, Transdev, SNCF, RATP), Flex bénéficie de l'expertise de Flex-Flux pour proposer des solutions innovantes et adaptées, consolidant leur position dans le secteur.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Ma place dans le SI -->
+            <div class="si-section">
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-sitemap"></i></span>
+                    <h2>Ma Place dans le SI</h2>
+                </div>
+                <div class="si-container">
+                    <p>Voici une représentation visuelle de ma position dans le Système d'Information de l'entreprise FLEX :</p>
+                    <div class="si-diagram">
+                        <img src="images/Capture_decran_2024-11-25_232242.png" alt="Ma place dans le SI" class="si-image">
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- Outils principaux -->
+            <div class="tools-section">
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-tools"></i></span>
+                    <h2>Environnement Technique</h2>
+                </div>
+                <div class="tools-cards">
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fas fa-file-excel"></i></div>
+                        <h3>Excel</h3>
+                        <p>Analyse et traitement des données</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>FlexHub</h3>
+                        <p>Plateforme interne de gestion</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fab fa-html5"></i></div>
+                        <h3>HTML</h3>
+                        <p>Structure des interfaces web</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fab fa-js"></i></div>
+                        <h3>JavaScript</h3>
+                        <p>Interactivité des sites</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS</h3>
+                        <p>Stylisation des interfaces</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fab fa-python"></i></div>
+                        <h3>Django</h3>
+                        <p>Framework de développement web</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Missions en entreprise -->
+            <div class="missions-section">
+                <div class="section-title">
+                    <span class="section-icon"><i class="fas fa-tasks"></i></span>
+                    <h2>Mes Missions</h2>
+                </div>
+                <div class="missions-container">
+                    <div class="mission-card">
+                        <div class="mission-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Conception de solutions adaptées</h3>
+                        <p>Avec l'équipe d'alternants nous analysons les besoins exprimés par nos clients partenaires tels que la SNCF, SAVAC, RATP et Lacroix, afin de développer des outils personnalisés qui répondent efficacement aux attentes de leurs usagers.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Amélioration des systèmes existants</h3>
+                        <p>En collaboration avec les developpeurs externes, nous modernisons et optimisons les fonctionnalités des logiciels utilisés par nos clients, garantissant une expérience utilisateur fluide et intuitive.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Automatisation des processus métier</h3>
+                        <p>Nous cherchons des solutions d'automatisation pour simplifier les tâches récurrentes en entreprise, augmentant ainsi la productivité et la satisfaction des utilisateurs finaux.</p>
+                    </div>
+                </div>
+            </div>                                     
+        </section>
+
+        <!-- Section Réalisations -->
         <section id="projects">
-            <h2>Mes Réalisations</h2>
-            <div class="filters">
-                <button data-filter="all" class="active">Toutes</button>
-                <button data-filter="professional">Professionnelles</button>
-                <button data-filter="academic">Scolaires</button>
+            <div class="projects-hero">
+                <h1>Mes Réalisations</h1>
+                <p>Découvrez les projets techniques sur lesquels j'ai travaillé, démontrant mes compétences en développement système, optimisation de performances et programmation bas niveau.</p>
             </div>
-            <div class="projects-list">
-                <div class="project professional" data-description="Dans le cadre de mon alternance pour le BTS SIO option SLAM, j’ai eu l’opportunité de contribuer au développement de l'applo de l’entreprise en créant une interface dédiée aux employés. Cette nouvelle section permet de centraliser et de faciliter l’accès à des documents spécifiques liés à leurs besoins professionnels, tels que les fiches de paie, les contrats ou encore les procédures internes. Le projet consistait à concevoir une interface intuitive, sécurisée et en adéquation avec l’identité visuelle de l’entreprise. J’ai utilisé des technologies adaptées pour gérer l’authentification des utilisateurs, assurer la confidentialité des documents et permettre une récupération rapide et efficace des fichiers. Ce développement s’inscrit dans une démarche d’amélioration des outils internes, en optimisant la gestion des ressources et en simplifiant les échanges entre l’entreprise et ses employés. Cette expérience m’a permis de mettre en pratique mes compétences en développement web, gestion des bases de données, et sécurité des applications, tout en répondant à des besoins concrets exprimés par l’entreprise.">
-                    <img src="Développement d'une Interface Employés.webp" alt="Projet Professionnel 1">
-                    <h3>Développement d'une Interface Employés pour la Gestion de Documents Internes</h3>
+            
+            <div class="projects-filters">
+                <button data-filter="all" class="filter-btn active">Tous les projets</button>
+                <button data-filter="professional" class="filter-btn">Professionnels</button>
+                <button data-filter="academic" class="filter-btn">Scolaires</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Projet TextAdventure -->
+                <div class="project-card academic" 
+                     data-title="TextAdventure"
+                     data-description="J'ai développé un jeu textuel inspiré d'un manga populaire (Dragon Ball). Le joueur peut explorer différents lieux, accomplir des actions, gérer un inventaire et participer à des combats. Ce prototype met en avant la programmation événementielle et la gestion de données."
+                     data-technologies="Python, Programmation Orientée Objet"
+                     data-documents="cahier des charges, capture d'écran code, capture d'écran du projet final, extrait de code">
+                    <div class="project-image">
+                        <img src="images/Projet_TextAdventure.webp" alt="TextAdventure">
+                    </div>
+                    <div class="project-info">
+                        <h3>TextAdventure</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">POO</span>
+                            <span class="project-tag">Jeu</span>
+                        </div>
+                        <p>Jeu d'aventure textuel inspiré de Dragon Ball avec exploration et combats.</p>
+                    </div>
                 </div>
-                <div class="project professional" data-description="J’ai fait une maquette d'un sondage en ligne destiné aux clients de l’entreprise, sur demande de la RATP. L’objectif principal de ce sondage est de recueillir des données précises sur les différentes tâches réalisées par leurs employés afin de mieux comprendre leurs besoins et d’optimiser nos solutions. Le projet a impliqué la conception d’un formulaire interactif, facile à utiliser et accessible, permettant de collecter des informations spécifiques en fonction des activités et des postes des collaborateurs. Les réponses sont centralisées dans une base de données sécurisée, facilitant ainsi l’analyse des résultats pour orienter les décisions stratégiques. Cette réalisation m’a permis de mettre en pratique mes compétences en développement d’interfaces utilisateur, gestion de bases de données, et manipulation de données structurées. Ce projet s’inscrit dans une démarche proactive de l’entreprise visant à renforcer son accompagnement et son adaptation aux besoins de ses partenaires.">
-                    <img src="Conception d’un Sondage Client.webp" alt="Projet Professionnel 2">
-                    <h3>Conception d’un Sondage Client pour l’Analyse des Tâches Employés</h3>
+                
+                <!-- Projet JojoLegion -->
+                <div class="project-card academic"
+                     data-title="Jojo Legion"
+                     data-description="Un site communautaire pour partager des théories et des discussions sur JoJo's Bizarre Adventure. Le site propose une exploration de l'univers de JoJo, répertoriant près de 170 personnages, classés par parties et récupérés via l'API 'Jikan'."
+                     data-technologies="HTML, CSS, JavaScript, Django, API"
+                     data-documents="README, charte graphique, cahier des charges, planning, diagramme de base de données">
+                    <div class="project-image">
+                        <img src="images/logo_jojolegion.png" alt="Jojo Legion">
+                    </div>
+                    <div class="project-info">
+                        <h3>Jojo Legion</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">API</span>
+                            <span class="project-tag">Web</span>
+                        </div>
+                        <p>Site communautaire pour partager des théories sur JoJo's Bizarre Adventure.</p>
+                    </div>
                 </div>
-                <div class="project professional" data-description="Avec l'équipe d'alternants en entreprise nous et j'ai travaillé sur l’amélioration et l’ajout de nouvelles fonctionnalités de l'application existant de l’entreprise. L’objectif était de rendre l’outil plus performant, intuitif et adapté aux besoins évolutifs des utilisateurs. Parmi les améliorations réalisées, j’ai optimisé certaines sections pour une navigation plus fluide et mis en place un système de recherche plus avancée, un tableau de bord interactif, ou encore une gestion des utilisateurs plus intuitive. Ces modifications ont permis d’améliorer l’expérience utilisateur tout en renforçant l’efficacité des outils internes. Ce projet aussi m’a permis d’approfondir mes compétences en développement web, en intégration de fonctionnalités dynamiques et en optimisation de code existant. J’ai également veillé à respecter les standards de sécurité et les bonnes pratiques de développement, contribuant ainsi à la pérennité et à la qualité du site de l’entreprise.">
-                    <img src="Optimisation et Développement de Nouvelles Fonctionnalités.webp" alt="Projet Professionnel 3">
-                    <h3>Optimisation et Développement de Nouvelles Fonctionnalités pour le Logiciel Interne de l'Entreprise</h3>
+                
+                <!-- Projet Ticket JO -->
+                <div class="project-card academic"
+                     data-title="Générateur de Tickets JO"
+                     data-description="Projet inspiré des Jeux Olympiques 2024 à Paris, où j'ai développé un programme de génération de billets pour les matchs de football. À partir de données JSON, j'ai conçu des tickets personnalisés intégrant toutes les informations nécessaires (équipes, lieux, dates) et un QR Code unique pour une gestion sécurisée."
+                     data-technologies="Java, JSON, QR Code, Design Graphique"
+                     data-documents="README, schéma explicatif, aperçu du projet, extrait de code">
+                    <div class="project-image">
+                        <img src="images/Image_Ticket_JO.webp" alt="Générateur de Tickets JO">
+                    </div>
+                    <div class="project-info">
+                        <h3>Générateur de Tickets JO</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">JSON</span>
+                            <span class="project-tag">QR Code</span>
+                        </div>
+                        <p>Générateur de billets personnalisés pour les événements des JO Paris 2024.</p>
+                    </div>
                 </div>
-        
-                <div class="project" 
-     id="jojo-legion"
-     data-title="Jojo Legion"
-     data-description="Un site communautaire pour partager des théories et des discussions sur JoJo's Bizarre Adventure."
-     data-date="2024-09"
-     data-duration="3 mois"
-     data-participants="4"
-     data-rating="9"
-     data-tools="HTML, CSS, JavaScript, Django"
-     data-documents="/documents/Cahier des Charges JojoLegion.pdf, /documents/charte graphique Finale JojoLegion.pdf, /documents/README.md"
-     data-takeaways="Importance de la collaboration en équipe et respect des contraintes techniques.">
-    <img src="logo_jojolegion.png" alt="Jojo Legion">
-    <h3>Jojo Legion</h3>
-    <p>Un site communautaire pour partager des théories sur JoJo's Bizarre Adventure.</p>
-</div>
-               
-                <div class="project academic" data-description="C'est un projet inspiré des Jeux Olympiques 2024 à Paris, où j'ai développé un programme de génération de billets pour les matchs de football. À partir de données JSON, j'ai conçu des tickets personnalisés intégrant toutes les informations nécessaires (équipes, lieux, dates) et un QR Code unique pour une gestion sécurisée. Le tout en respectant des contraintes graphiques strictes et des formats internationaux.">
-                    <img src="Image Ticket JO.webp" alt="Projet Scolaire 1">
-                    <h3>Projet Ticket JO</h3>
+                
+                <!-- Projet GestEPI -->
+                <div class="project-card academic"
+                     data-title="GestEPI"
+                     data-description="Application de gestion d'équipements de protection individuelle, permettant le suivi des attributions, des maintenances et des contrôles réglementaires."
+                     data-technologies="Java, Base de données, UML"
+                     data-documents="Diagramme de cas d'utilisation, README, aperçu du projet">
+                    <div class="project-image">
+                        <img src="images/placeholder-project.jpg" alt="GestEPI">
+                    </div>
+                    <div class="project-info">
+                        <h3>GestEPI</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">UML</span>
+                            <span class="project-tag">BDD</span>
+                        </div>
+                        <p>Application de gestion d'équipements de protection individuelle.</p>
+                    </div>
                 </div>
-                <div class="project academic" data-description="J'ai développé un jeu textuel inspiré d'un manga populaire (Dragon Ball). Le joueur peut explorer différents lieux, accomplir des actions, gérer un inventaire et participer à des combats. Ce prototype met en avant la programmation événementielle et la gestion de données.">
-                    <img src="Projet TextAdventure.webp" alt="Projet Scolaire 2">
-                    <h3>Projet TextAdventure</h3>
+                
+                <!-- Projet Nimbus -->
+                <div class="project-card academic"
+                     data-title="Nimbus Railway"
+                     data-description="Application de simulation de réseau ferroviaire, modélisant le trafic et les différentes contraintes opérationnelles."
+                     data-technologies="Java, JavaFX, Base de données, Modélisation"
+                     data-documents="maquette, modèle relationnel, README, planning, cahier technique">
+                    <div class="project-image">
+                        <img src="images/placeholder-project.jpg" alt="Nimbus Railway">
+                    </div>
+                    <div class="project-info">
+                        <h3>Nimbus Railway</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaFX</span>
+                            <span class="project-tag">BDD</span>
+                            <span class="project-tag">Simulation</span>
+                        </div>
+                        <p>Simulation de réseau ferroviaire avec gestion du trafic.</p>
+                    </div>
                 </div>
-                <div class="project academic" data-description="Un projet où j'ai développé un site de vente en PHP connecté à une base de données locale MySQL. Le site permet de naviguer parmi des produits (Airsoft), d'ajouter des articles à un panier interactif, et de gérer des produits en édition limitée grâce à un système de compte à rebours pour simuler l'urgence des ventes. Ce projet m'a permis de maîtriser des concepts essentiels tels que la gestion des bases de données ou l'interaction entre le front-end et le back-end.">
-                    <img src="Projet Site de Vente.webp" alt="Projet Scolaire 3">
-                    <h3>Site de Vente</h3>
+                
+                <!-- Projet Site de Vente -->
+                <div class="project-card academic"
+                     data-title="Site de Vente Airsoft"
+                     data-description="Un projet où j'ai développé un site de vente en PHP connecté à une base de données locale MySQL. Le site permet de naviguer parmi des produits (Airsoft), d'ajouter des articles à un panier interactif, et de gérer des produits en édition limitée grâce à un système de compte à rebours."
+                     data-technologies="PHP, MySQL, HTML, CSS, JavaScript"
+                     data-documents="">
+                    <div class="project-image">
+                        <img src="images/Projet_Site_de_Vente.webp" alt="Site de Vente Airsoft">
+                    </div>
+                    <div class="project-info">
+                        <h3>Site de Vente Airsoft</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">E-commerce</span>
+                        </div>
+                        <p>Site e-commerce de vente d'équipements Airsoft avec panier interactif.</p>
+                    </div>
                 </div>
-                <div class="project academic" data-description="Dans ce projet, j'ai exploré les vulnérabilités liées aux injections SQL à travers une plateforme pédagogique. L'objectif était de détecter et exploiter ces failles dans un environnement sécurisé, puis d'appliquer des contre-mesures robustes. C'est un travail qui m'a permis de renforcer mes compétences en analyse de sécurité web, en comprenant les erreurs fréquentes de développement et en découvrant des solutions pratiques pour protéger les applications contre ces attaques.">
-                    <img src="Mission OWASP.webp" alt="Projet Scolaire 4">
-                    <h3>Mission OWASP</h3>
+                
+                <!-- Projet Mission OWASP -->
+                <div class="project-card academic"
+                     data-title="Mission OWASP"
+                     data-description="Dans ce projet, j'ai exploré les vulnérabilités liées aux injections SQL à travers une plateforme pédagogique. L'objectif était de détecter et exploiter ces failles dans un environnement sécurisé, puis d'appliquer des contre-mesures robustes."
+                     data-technologies="Sécurité Web, SQL, PHP"
+                     data-documents="">
+                    <div class="project-image">
+                        <img src="images/Mission_OWASP.webp" alt="Mission OWASP">
+                    </div>
+                    <div class="project-info">
+                        <h3>Mission OWASP</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Sécurité</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">PHP</span>
+                        </div>
+                        <p>Exploration et correction de vulnérabilités d'injection SQL.</p>
+                    </div>
+                </div>
+                
+                <!-- Projet Interface Employés -->
+                <div class="project-card professional"
+                     data-title="Interface de Gestion Documentaire"
+                     data-description="Dans le cadre de mon alternance, j'ai contribué au développement de l'application de l'entreprise en créant une interface dédiée aux employés. Cette nouvelle section permet de centraliser et de faciliter l'accès à des documents spécifiques liés à leurs besoins professionnels, tels que les fiches de paie, les contrats ou encore les procédures internes."
+                     data-technologies="HTML, CSS, JavaScript, Django, Base de données"
+                     data-documents="">
+                    <div class="project-image">
+                        <img src="images/Developpement_dune_Interface_Employes.webp" alt="Interface de Gestion Documentaire">
+                    </div>
+                    <div class="project-info">
+                        <h3>Interface de Gestion Documentaire</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">UX/UI</span>
+                            <span class="project-tag">Sécurité</span>
+                        </div>
+                        <p>Interface sécurisée pour la gestion des documents internes des employés.</p>
+                    </div>
+                </div>
+                
+                <!-- Projet Sondage Client -->
+                <div class="project-card professional"
+                     data-title="Sondage Clients RATP"
+                     data-description="Conception d'un sondage en ligne destiné aux clients de l'entreprise, sur demande de la RATP. L'objectif principal de ce sondage est de recueillir des données précises sur les différentes tâches réalisées par leurs employés afin de mieux comprendre leurs besoins et d'optimiser nos solutions."
+                     data-technologies="Formulaires Web, Base de données, Analyse de données"
+                     data-documents="">
+                    <div class="project-image">
+                        <img src="images/Conception_dun_Sondage_Client.webp" alt="Sondage Clients RATP">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sondage Clients RATP</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Formulaires</span>
+                            <span class="project-tag">Analyse</span>
+                            <span class="project-tag">UX/UI</span>
+                        </div>
+                        <p>Recueil et analyse des besoins clients pour optimiser les solutions.</p>
+                    </div>
+                </div>
+                
+                <!-- Projet Optimisation -->
+                <div class="project-card professional"
+                     data-title="Optimisation Application Métier"
+                     data-description="Amélioration et ajout de nouvelles fonctionnalités à l'application existante de l'entreprise. L'objectif était de rendre l'outil plus performant, intuitif et adapté aux besoins évolutifs des utilisateurs."
+                     data-technologies="Django, JavaScript, CSS, Optimisation"
+                     data-documents="">
+                    <div class="project-image">
+                        <img src="images/Optimisation_et_Developpement_de_Nouvelles_Fonctionnalites.webp" alt="Optimisation Application Métier">
+                    </div>
+                    <div class="project-info">
+                        <h3>Optimisation Application Métier</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Optimisation</span>
+                            <span class="project-tag">UX/UI</span>
+                            <span class="project-tag">Django</span>
+                        </div>
+                        <p>Refonte et amélioration des performances d'applications internes.</p>
+                    </div>
                 </div>
             </div>
         </section>
         
-       <div id="popup" class="popup hidden">
-    <div class="popup-content">
-        <span class="popup-close">&times;</span>
-        <h3 id="popup-title"></h3>
-        <p id="popup-description"></p>
-        <div id="popup-details"></div>
-    </div>
-</div>
+        <!-- Modal pour les détails des projets -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-header">
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-tags" class="modal-tags"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-description">
+                        <h3><i class="fas fa-info-circle"></i> Description</h3>
+                        <p id="modal-description"></p>
+                    </div>
+                    <div class="modal-technologies">
+                        <h3><i class="fas fa-laptop-code"></i> Technologies utilisées</h3>
+                        <p id="modal-technologies"></p>
+                    </div>
+                    <div class="modal-documents">
+                        <h3><i class="fas fa-file-alt"></i> Documents associés</h3>
+                        <div id="modal-documents" class="document-links"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
+        <!-- Section Veille Technologique -->
         <section id="tech-watch">
-            <h2>Ma Veille Technologique - CLOUD COMPUTING</h2>
-            <div class="filters">
-                <label for="sort-select">Trier par :</label>
-                <select id="sort-select">
-                    <option value="default">Par défaut</option>
-                    <option value="oldest">Du plus ancien au plus récent</option>
-                    <option value="newest">Du plus récent au plus ancien</option>
-                    <option value="year-2023">Articles de 2023</option>
-                    <option value="year-2024">Articles de 2024</option>
-                </select>
+            <div class="veille-hero">
+                <h1>Ma Veille Technologique</h1>
+                <h2>CLOUD COMPUTING</h2>
             </div>
-            <div class="articles">
-                <!-- Articles existants -->
-                <div class="article-box">
-                    <span class="article-rating">9/10</span>
-                    <h3>Cloud Security : Enjeux et challenges de la sécurité dans le cloud ?</h3>
-                    <p class="article-date" data-date="2023-06-12">Publié le : 12/06/2024</p>
-                    <p>Le "cloud" terme désignant des ressources informatiques à distance...</p>
-                    <a href="https://www.cyberuniversity.com/post/la-securite-dans-le-cloud-principaux-risques-et-challenges" target="_blank">Lire l'article complet</a>
+            
+            <div class="veille-filters">
+                <div class="filter-group">
+                    <label for="sort-select">Trier par :</label>
+                    <select id="sort-select" class="filter-select">
+                        <option value="default">Par défaut</option>
+                        <option value="oldest">Plus ancien au plus récent</option>
+                        <option value="newest">Plus récent au plus ancien</option>
+                        <option value="year-2023">Articles de 2023</option>
+                        <option value="year-2024">Articles de 2024</option>
+                    </select>
                 </div>
-                <div class="article-box">
-                    <span class="article-rating">8/10</span>
-                    <h3>Le Cloud Computing aujourd’hui et de demain</h3>
-                    <p class="article-date" data-date="2023-10-15">Publié le : 15/10/2024</p>
-                    <p>Les analystes de Gartner considèrent que 85 % des organisations...</p>
-                    <a href="https://carrieres.groupeozitem.com/blog/tendances-cloud-computing" target="_blank">Lire l'article complet</a>
+            </div>
+            
+            <div class="veille-grid">
+                <!-- Article 1 -->
+                <div class="veille-card" data-date="2023-06-12">
+                    <div class="veille-rating">9/10</div>
+                    <div class="veille-content">
+                        <h3>Cloud Security : Enjeux et challenges de la sécurité dans le cloud</h3>
+                        <div class="veille-metadata">
+                            <span class="veille-date"><i class="far fa-calendar-alt"></i> 12/06/2023</span>
+                            <span class="veille-source"><i class="fas fa-link"></i> Cyber University</span>
+                        </div>
+                        <p class="veille-summary">Le "cloud" désigne des ressources informatiques à distance, accessibles via Internet. Si cette technologie offre de nombreux avantages (flexibilité, économies d'échelle, etc.), elle soulève également d'importants enjeux de sécurité...</p>
+                        <div class="veille-footer">
+                            <a href="https://www.cyberuniversity.com/post/la-securite-dans-le-cloud-principaux-risques-et-challenges" target="_blank" class="btn-read">Lire l'article complet</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="article-box">
-                    <span class="article-rating">7/10</span>
-                    <h3>Le Cloud Computing en 2023 : Réflexion sur les Prédictions et Réalités</h3>
-                    <p class="article-date" data-date="2023-11-27">Publié le : 27/11/2023</p>
-                    <p>L'article "Cloud Computing in 2023: Reflecting on Predictions...</p>
-                    <a href="https://rickscloud.com/cloud-computing-trends-2023-review/" target="_blank">Lire l'article complet</a>
+                
+                <!-- Article 2 -->
+                <div class="veille-card" data-date="2023-10-15">
+                    <div class="veille-rating">8/10</div>
+                    <div class="veille-content">
+                        <h3>Le Cloud Computing aujourd'hui et de demain</h3>
+                        <div class="veille-metadata">
+                            <span class="veille-date"><i class="far fa-calendar-alt"></i> 15/10/2023</span>
+                            <span class="veille-source"><i class="fas fa-link"></i> Groupe Ozitem</span>
+                        </div>
+                        <p class="veille-summary">Les analystes de Gartner considèrent que 85% des organisations adopteront une approche "cloud-first" d'ici 2025. Cette évolution majeure s'accompagne de tendances clés comme l'essor du multi-cloud hybride, le développement du serverless...</p>
+                        <div class="veille-footer">
+                            <a href="https://carrieres.groupeozitem.com/blog/tendances-cloud-computing" target="_blank" class="btn-read">Lire l'article complet</a>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Article 3 -->
+                <div class="veille-card" data-date="2023-11-27">
+                    <div class="veille-rating">7/10</div>
+                    <div class="veille-content">
+                        <h3>Le Cloud Computing en 2023 : Réflexion sur les Prédictions et Réalités</h3>
+                        <div class="veille-metadata">
+                            <span class="veille-date"><i class="far fa-calendar-alt"></i> 27/11/2023</span>
+                            <span class="veille-source"><i class="fas fa-link"></i> Rick's Cloud</span>
+                        </div>
+                        <p class="veille-summary">L'article "Cloud Computing in 2023: Reflecting on Predictions vs Reality" offre une analyse rétrospective des prévisions faites pour le cloud computing en 2023, confrontées aux évolutions réelles. Les prédictions concernant l'IA...</p>
+                        <div class="veille-footer">
+                            <a href="https://rickscloud.com/cloud-computing-trends-2023-review/" target="_blank" class="btn-read">Lire l'article complet</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Section Bilan -->
         <section id="bilan">
-            <h2>Bilan</h2>
-            <p>Vous retrouverez ici le Bilan de mes 2 années de BTS SIO Slam...</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024-2025 Elijah Dabo. BTS SIO.</p>
-    </footer>
-
-    <script src="projet.js"></script>
-</body>
-</html>
+            <div class="bilan-hero">
+                <h1>Bilan de Formation</h1>
+                <h2>BTS SIO option SLAM</h2>
+            </div>
+            
+            <div class="bilan-content">
+                <div class="bilan-section competences">
+                    <div class="section-title">
+                        <span class="section-icon"><i class="fas fa-award"></i></span>
+                        <h2>Compétences Acquises</h2>
+                    </div>
+                    <div class="competences-grid">
+                        <div class="competence-card">
+                            <div class="competence-icon"><i class="fas fa-code"></i></div>
+                            <h3>Développement Web</h3>
+                            <p>Maîtrise des langages HTML, CSS et JavaScript pour la création d'interfaces utilisateur interactives et responsives.</p>
+                            <div class="competence-level">
+                                <div class="competence-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="competence-card">
+                            <div class="competence-icon"><i class="fas fa-database"></i></div>
+                            <h3>Bases de Données</h3>
+                            <p>Conception et administration de bases de données, optimisation des requêtes SQL et modélisation de données.</p>
+                            <div class="competence-level">
+                                <div class="competence-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="competence-card">
+                            <div class="competence-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>Programmation</h3>
+                            <p>Développement d'applications en Python, Java et PHP en appliquant les principes de la POO.</p>
+                            <div class="competence-level">
+                                <div class="competence-progress" style="width: 75%">

@@ -331,10 +331,13 @@ function initializeLoader() {
   // Variable pour suivre si le chargement est terminé
   let loadingComplete = false;
   
+  // Supprimer tout attribut onload qui pourrait interférer
+  document.body.removeAttribute('onload');
+  
   // Simuler une progression de chargement avec vérification de sécurité
   let progress = 0;
   const interval = setInterval(() => {
-    progress += Math.random() * 10;
+    progress += Math.random() * 5; // Progression plus lente (5 au lieu de 10)
     if (progress > 100) progress = 100;
     
     progressBar.style.width = `${progress}%`;
@@ -342,35 +345,52 @@ function initializeLoader() {
     if (progress === 100) {
       loadingComplete = true;
       clearInterval(interval);
+      
+      // Délai augmenté pour voir l'animation à 100% complète
       setTimeout(() => {
+        // Disparition progressive avec animation
         loader.style.opacity = '0';
         setTimeout(() => {
           loader.style.display = 'none';
           animateHeroElements();
-        }, 500);
-      }, 500);
+        }, 800); // Délai augmenté pour une transition plus fluide
+      }, 1200); // Délai augmenté pour voir la fusée à 100%
     }
-  }, 200);
+  }, 300); // Intervalle plus long pour une progression plus lente
   
   // Assurer que le loader disparaît même si des ressources prennent du temps
   window.addEventListener('load', () => {
     console.log('Fenêtre chargée - Finalisation du loader');
-    progress = 100;
-    progressBar.style.width = '100%';
+    
+    // Au lieu de forcer à 100%, permettre à l'animation de se terminer naturellement
+    if (progress < 80) {
+      progress = 80; // Accélérer jusqu'à 80% seulement
+      progressBar.style.width = '80%';
+    }
     
     setTimeout(() => {
-      clearInterval(interval);
-      if (!loadingComplete) {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-          loader.style.display = 'none';
-          animateHeroElements();
-        }, 500);
+      // Assurer d'atteindre 100% naturellement
+      if (progress < 100) {
+        progress = 100;
+        progressBar.style.width = '100%';
       }
-    }, 500);
+      
+      if (!loadingComplete) {
+        loadingComplete = true;
+        clearInterval(interval);
+        
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+            animateHeroElements();
+          }, 800);
+        }, 1000);
+      }
+    }, 1000);
   });
   
-  // Sécurité pour garantir la disparition du loader
+  // Sécurité pour garantir la disparition du loader (délai augmenté)
   setTimeout(() => {
     if (!loadingComplete) {
       console.log('Forçage du chargement complet (délai expiré)');
@@ -382,9 +402,9 @@ function initializeLoader() {
       setTimeout(() => {
         loader.style.display = 'none';
         animateHeroElements();
-      }, 500);
+      }, 800);
     }
-  }, 5000); // 5 secondes maximum
+  }, 8000); // 8 secondes maximum (au lieu de 5)
 }
 
 // ===== ANIMATION DES ÉLÉMENTS HERO =====

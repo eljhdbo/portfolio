@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mentions légales - Portfolio." />
+  <title>Mentions légales - Portfolio</title>
+
+  <!-- Google Fonts - Orbitron pour un design spatial -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome pour les icônes spatiales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Étoiles de fond dynamiques (canvas) -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Planètes décoratives -->
+  <div class="planet planet-1"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-container">
+      <div class="loader-rocket">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <div class="loader-text">Initialisation du système...</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation principale -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-text">Elijah<span class="highlight">Dabo</span></span>
+        </a>
+      </div>
+      <div class="nav-toggle" aria-label="Ouvrir la navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="entreprise.html"><i class="fas fa-building"></i> Entreprise</a></li>
+        <li><a href="realisations.html"><i class="fas fa-rocket"></i> Réalisations</a></li>
+        <li><a href="veille.html"><i class="fas fa-satellite"></i> Veille</a></li>
+        <li><a href="bilan.html"><i class="fas fa-flag-checkered"></i> Bilan</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Activer ou désactiver le mode sombre">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section Hero -->
+    <section class="hero section">
+      <div class="hero-content">
+        <h1 class="glitch-text">Mentions légales</h1>
+        <p class="hero-description">Informations légales concernant ce site web</p>
+      </div>
+    </section>
+
+    <!-- Section Mentions Légales -->
+    <section class="section">
+      <div class="content-section">
+        <h2>1. Édition du site</h2>
+        <p>Le présent site, accessible à l'URL <span class="highlight">www.portfolio.elijahdabo.com</span>, est édité par :</p>
+        
+        <p><strong>Usman Elijah Dabo</strong>, résidant de Saint-Gratien, de nationalité française, né(e) le 12/05/03,</p>
+        
+        <p><strong>Le Site</strong> est hébergé par :<br>
+          GitHub Pages, service édité par GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis.</p>
+        
+        <h2>2. Directeur de publication</h2>
+        <p>Le Directeur de la publication du Site est <strong>Usman Elijah Dabo</strong>.</p>
+        
+        <h2>3. Me contacter</h2>
+        <ul>
+          <li>Par email : <span class="highlight">elijahdabopro@gmail.com</span></li>
+          <li>Par formulaire de contact : disponible sur la page <a href="index.html#contact">Me Contacter</a></li>
+        </ul>
+        
+        <h2>4. Données personnelles</h2>
+        <p>Le traitement de vos données à caractère personnel est régi par notre Charte du respect de la vie privée, disponible depuis la section « Charte de Protection des Données Personnelles », accessible sur demande via email.</p>
+        
+        <h2>5. Propriété intellectuelle</h2>
+        <p>Le design, l'interface, les informations, la présentation et le contenu du Site dans son ensemble sont protégés par le droit d'auteur, le droit des marques, et le droit des bases de données. Ils ne peuvent être copiés, reproduits, modifiés, publiés, transmis ou distribués sans l'autorisation écrite préalable de l'éditeur du Site.</p>
+        
+        <p>Les contenus sont disponibles pour un usage strictement personnel et non commercial. Vous êtes autorisé à les télécharger et à les imprimer uniquement pour votre usage personnel.</p>
+        
+        <h2>6. Liens hypertextes</h2>
+        <p>Le Site peut contenir des liens hypertextes vers d'autres sites présents sur le réseau Internet. Les liens vers ces autres ressources vous font quitter le Site. Ces liens sont proposés à titre informatif. L'éditeur n'est pas responsable du contenu de ces sites et ressources externes.</p>
+        
+        <h2>7. Droit applicable et juridiction compétente</h2>
+        <p>Les présentes mentions légales sont régies par la loi française. En cas de différend et à défaut d'accord amiable, le litige sera porté devant les tribunaux français compétents.</p>
+        
+        <h2>8. Crédits</h2>
+        <p>Le site a été réalisé par <strong>Usman Elijah Dabo</strong>.</p>
+        <p>Les icônes utilisées sur ce site proviennent de <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>.</p>
+        <p>Les polices d'écriture utilisées sur ce site proviennent de <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>.</p>
+        <p>Ce site a été partiellement assisté par des outils d’intelligence artificielle (IA) pour l’optimisation des contenus du code, sous la supervision de l’auteur.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="entreprise.html">Entreprise</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope"></i> elijahdabopro@gmail.com</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dabo Elijah. Tous droits réservés.</p>
+      <a href="mentions-legales.html" class="active">Mentions légales</a>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>

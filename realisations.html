@@ -1,0 +1,157 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez mes réalisations professionnelles et scolaires - Portfolio." />
+  <title>Mes Réalisationse - Portfolio</title>
+
+  <!-- Google Fonts - Orbitron pour un design spatial -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome pour les icônes spatiales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Étoiles de fond dynamiques (canvas) -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Planètes décoratives -->
+  <div classplanet planet-1></div>
+  <div class="planet planet-3"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-container">
+      <div class="loader-rocket">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <div class="loader-text">Initialisation du système...</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation principale -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-text">Elijah<span class="highlight">Dabo</span></span>
+        </a>
+      </div>
+      <div class="nav-toggle" aria-label="Ouvrir la navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="entreprise.html"><i class="fas fa-building"></i> Entreprise</a></li>
+        <li><a href="realisations.html" class="active"><i class="fas fa-rocket"></i> Réalisations</a></li>
+        <li><a href="veille.html"><i class="fas fa-satellite"></i> Veille</a></li>
+        <li><a href="bilan.html"><i class="fas fa-flag-checkered"></i> Bilan</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Activer ou désactiver le mode sombre">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section Hero -->
+    <section class="hero section">
+      <div class="hero-content">
+        <h1 class="glitch-text">Mes Réalisations</h1>
+        <p class="hero-description">Découvrez les projets que j'ai réalisés durant mon parcours professionnel et académique.</p>
+      </div>
+    </section>
+
+    <!-- Section Filtres et Projets -->
+    <section class="section">
+      <div class="filters">
+        <button data-filter="all" class="filter-btn active">Tous les projets</button>
+        <button data-filter="Scolaire" class="filter-btn">Projets scolaires</button>
+        <button data-filter="Professionnel" class="filter-btn">Projets professionnels</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Les projets seront injectés ici par JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal projet -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Fermer la fenêtre">×</button>
+      <img src="" alt="Image du projet" id="modal-image" class="modal-image">
+      
+      <div class="modal-content">
+        <h2 id="modal-title">Titre du projet</h2>
+        
+        <div class="modal-info">
+          <div class="info-item">
+            <i class="far fa-calendar-alt"></i> <strong>Période:</strong> <span id="modal-period">Période du projet</span>
+          </div>
+          <div class="info-item">
+            <i class="far fa-clock"></i> <strong>Durée:</strong> <span id="modal-duration">Durée du projet</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-users"></i> <strong>Participants:</strong> <span id="modal-participants">Nombre de participants</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-star"></i> <strong>Évaluation:</strong> <span id="modal-rating" class="rating-stars"></span>
+          </div>
+        </div>
+        
+        <div id="modal-tags" class="modal-tags"></div>
+        
+        <div class="modal-description">
+          <p id="modal-description">Description détaillée du projet.</p>
+        </div>
+        
+        <div class="documents-section">
+          <h3>Documents associés</h3>
+          <div id="modal-documents" class="document-links"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="entreprise.html">Entreprise</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Me Contacter</h3>
+        <p><i class="fas fa-envelope"></i> elijahdabopro@gmail.com</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dabo Elijah. Tous droits réservés.</p>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+</body>
+</html

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ma veille technologique sur le Cloud Computing - Portfolio Galaxie." />
+  <title>Veille Technologique - Portfolio</title>
+
+  <!-- Google Fonts - Orbitron pour un design spatial -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome pour les icônes spatiales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- Styles spécifiques à la page veille -->
+  <style>
+    /* Amélioration du dimensionnement des cartes d'articles de veille */
+
+    /* 1. Correction de la grille pour un alignement uniforme */
+    .veille-articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* 2. Dimensions fixes pour les cartes */
+    .veille-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 450px; /* Hauteur fixe pour toutes les cartes */
+      border-radius: 15px;
+      overflow: hidden;
+      background: rgba(10, 17, 40, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(92, 107, 192, 0.2);
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    }
+
+    /* 3. Dimensionnement de l'en-tête */
+    .veille-card-header {
+      padding: 1.25rem;
+      background: linear-gradient(45deg, rgba(28, 34, 71, 0.9), rgba(11, 12, 35, 0.9));
+      border-bottom: 2px solid rgba(92, 107, 192, 0.3);
+    }
+
+    /* 4. Titre avec hauteur fixe */
+    .veille-card-title {
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+      height: 3.4em; /* Hauteur fixe pour 2-3 lignes */
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /* 5. Contenu principal de la carte */
+    .veille-card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background: linear-gradient(to bottom, rgba(10, 17, 40, 0.7), rgba(15, 23, 42, 0.9));
+    }
+
+    /* 6. Résumé avec hauteur contrôlée */
+    .veille-card-summary {
+      flex: 1;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      height: 9.6em; /* Hauteur fixe pour environ 6 lignes */
+      overflow: hidden;
+      position: relative;
+      opacity: 0.9;
+      text-align: justify;
+    }
+
+    /* 7. Effet de fondu en bas du résumé */
+    .veille-card-summary::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2em;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.9));
+      pointer-events: none;
+    }
+
+    /* 8. Footer de la carte optimisé */
+    .veille-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: auto; /* Pousse le footer vers le bas */
+    }
+
+    /* 9. Métadonnées de l'article */
+    .veille-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .veille-card-date, 
+    .veille-card-source {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: rgba(224, 224, 224, 0.8);
+    }
+
+    /* 10. Bouton "En savoir plus" */
+    .veille-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--secondary-light);
+      background: rgba(0, 188, 212, 0.1);
+      border: 1px solid var(--secondary-light);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    /* 11. Animation au survol plus subtile */
+    .veille-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    /* 12. Responsive design amélioré */
+    @media (max-width: 1200px) {
+      .veille-articles {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+      
+      .veille-card {
+        height: 430px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .veille-articles {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .veille-card {
+        height: 400px;
+      }
+      
+      .veille-card-summary {
+        height: 8em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .veille-articles {
+        grid-template-columns: 1fr;
+      }
+      
+      .veille-card {
+        height: auto;
+        min-height: 380px;
+      }
+    }
+
+    /* Styles pour les étoiles scintillantes */
+    .twinkling-star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      z-index: -1;
+      box-shadow: 0 0 4px #fff, 0 0 8px #fff;
+      animation: twinkle 5s infinite ease-in-out;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 0.8; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Étoiles de fond dynamiques (canvas) -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Planètes décoratives -->
+  <div class="planet planet-2"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-container">
+      <div class="loader-rocket">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <div class="loader-text">Initialisation du système...</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation principale -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-text">Portfolio<span class="highlight">Elijah</span></span>
+        </a>
+      </div>
+      <div class="nav-toggle" aria-label="Ouvrir la navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="entreprise.html"><i class="fas fa-building"></i> Entreprise</a></li>
+        <li><a href="realisations.html"><i class="fas fa-rocket"></i> Réalisations</a></li>
+        <li><a href="veille.html" class="active"><i class="fas fa-satellite"></i> Veille</a></li>
+        <li><a href="bilan.html"><i class="fas fa-flag-checkered"></i> Bilan</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Activer ou désactiver le mode sombre">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section Hero -->
+    <section class="hero section">
+      <div class="hero-content">
+        <h1 class="glitch-text">Veille Technologique</h1>
+        <p class="hero-description">Découvrez ma veille technologique sur les tendances et innovations dans le domaine du Cloud Computing.</p>
+      </div>
+    </section>
+
+    <!-- Section Veille -->
+    <section class="section">
+      <div class="content-section">
+        <!-- Présentation du sujet de veille -->
+        <div class="veille-topic">
+          <h2>Le Cloud Computing</h2>
+          <p>Le Cloud Computing représente une révolution technologique majeure, transformant la manière dont les entreprises et les particuliers utilisent et accèdent aux ressources informatiques. Cette approche permet d'externaliser la puissance de calcul, le stockage de données et divers services via internet, offrant une flexibilité, une évolutivité et une accessibilité sans précédent.</p>
+          <p>Ma veille technologique sur ce sujet couvre la période de Novembre 2023 à Avril 2025, explorant les dernières innovations, les tendances émergentes et les défis du secteur.</p>
+        </div>
+        
+        <!-- Outils de veille utilisés -->
+        <div class="tools-section">
+          <h2>Outils de veille utilisés</h2>
+          <div class="tools-container">
+            <div class="tool-item">
+              <div class="tool-icon">
+                <i class="fas fa-rss"></i>
+              </div>
+              <h3>Feedly</h3>
+              <p>Centralisation de toute la veille thématique cloud.</p>
+            </div>
+            
+            <div class="tool-item">
+              <div class="tool-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <h3>Google Alerts</h3>
+              <p>Réception automatique des nouvelles annonces par email.</p>
+            </div>
+            
+            <div class="tool-item">
+              <div class="tool-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <h3>LinkedIn</h3>
+              <p>Suivi des posts d'experts et annonces d'entreprises en direct.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Articles de veille optimisée -->
+    <section class="section articles-section">
+      <h2 class="section-title">Articles de veille</h2>
+      
+      <!-- Filtres optimisés avec attributs d'accessibilité -->
+      <div class="filter-controls" role="tablist" aria-label="Filtres des articles">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-pressed="true"><i class="fas fa-globe"></i> Tous les articles</button>
+        <button class="filter-btn" data-filter="2025" role="tab" aria-selected="false" aria-pressed="false"><i class="fas fa-calendar"></i> 2025</button>
+        <button class="filter-btn" data-filter="2024" role="tab" aria-selected="false" aria-pressed="false"><i class="fas fa-calendar"></i> 2024</button>
+        <button class="filter-btn" data-filter="2023" role="tab" aria-selected="false" aria-pressed="false"><i class="fas fa-calendar"></i> 2023</button>
+        <button class="filter-btn" data-sort="newest" role="tab" aria-selected="false" aria-pressed="false"><i class="fas fa-sort-amount-down"></i> Plus récents</button>
+        <button class="filter-btn" data-sort="oldest" role="tab" aria-selected="false" aria-pressed="false"><i class="fas fa-sort-amount-up"></i> Plus anciens</button>
+      </div>
+      
+      <!-- Section de résultats avec structure sémantique -->
+      <div class="veille-results-section" role="region" aria-live="polite">
+        <!-- Conteneur pour les cartes d'articles -->
+        <div class="veille-articles" id="veille-articles"></div>
+        
+        <!-- Indicateur de chargement -->
+        <div class="articles-loading" id="articles-loading">
+          <div class="loading-spinner">
+            <i class="fas fa-circle-notch fa-spin"></i>
+          </div>
+          <p>Chargement des articles...</p>
+        </div>
+      </div>
+      
+      <!-- Bouton "Charger plus" (optionnel pour pagination future) -->
+      <div class="load-more-container">
+        <button id="load-more-btn" class="btn-primary" style="display: none;">
+          <i class="fas fa-plus-circle"></i> Charger plus d'articles
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="entreprise.html">Entreprise</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-envelope"></i> dabo.elijah@gmail.com</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/elijah-dabo" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/elijahdabo" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Elijah Dabo. Tous droits réservés.</p>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+  
+  <!-- Script optimisé pour la veille technologique -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Forcer la fermeture du loader immédiatement
+      const loader = document.getElementById('loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 500);
+      }
+      
+      // Données complètes des articles de veille
+      const veilleArticles = 
+      [
+  {
+    id: 1,
+    title: "Derrière l'IA, la déferlante des data centers",
+    date: "Juin 2024",
+    source: "Le Monde",
+    link: "https://www.lemonde.fr/economie/article/2024/06/14/derriere-l-ia-la-deferlante-des-data-centers_6239694_3234.html",
+    summary: "Analyse de l'impact de l'IA sur l'expansion des data centers, avec des investissements massifs des géants du cloud et des enjeux énergétiques majeurs.",
+    content: "L'essor de l'intelligence artificielle génère des besoins sans précédent en matière d'infrastructures de calcul et de stockage, poussant les géants du cloud à investir massivement dans leurs data centers.",
+    rating: 5.0,
+    year: "2024",
+    backgroundImage: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 2,
+    title: "Top 6 cloud computing trends for 2025",
+    date: "Décembre 2024",
+    source: "CNCF",
+    link: "https://www.cncf.io/blog/2024/12/03/top-6-cloud-computing-trends-for-2025/",
+    summary: "Présentation des principales tendances du cloud computing pour 2025, notamment l'adoption du multicloud et l'importance de la sécurité.",
+    content: "La Cloud Native Computing Foundation présente les grandes tendances qui façonnent l'avenir du cloud computing pour 2025.",
+    rating: 4.0,
+    year: "2024",
+    backgroundImage: "url('https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 3,
+    title: "Google Cloud Next 2025 : Les annonces infrastructures et Cyber",
+    date: "Avril 2025",
+    source: "IT for Business",
+    link: "https://www.itforbusiness.fr/google-cloud-next-2025-les-annonces-infrastructures-et-cyber-90362",
+    summary: "Compte-rendu des annonces de Google lors de sa conférence annuelle, avec un focus sur les infrastructures cloud et la cybersécurité.",
+    content: "La conférence Google Cloud Next 2025 a dévoilé des innovations majeures en matière d'infrastructures cloud et de cybersécurité.",
+    rating: 5.0,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1551731409-43eb3e517a1a?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 4,
+    title: "Cloud computing trends for 2023 - 2025!",
+    date: "Janvier 2024",
+    source: "Nearshore IT",
+    link: "https://www.nearshore-it.eu/technologies/cloud-computing-trends-for-2023-2025/",
+    summary: "Exploration des tendances majeures du cloud computing entre 2023 et 2025, incluant l'IA, le multicloud et la sécurité.",
+    content: "Cet article présente un aperçu des grandes évolutions du cloud computing sur la période 2023 à 2025.",
+    rating: 4.0,
+    year: "2024",
+    backgroundImage: "url('https://images.unsplash.com/photo-1511578194003-00c80e42dc9b?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 5,
+    title: "Infrastructure du cloud et de l'IA 2025",
+    date: "Mars 2025",
+    source: "DataCamp",
+    link: "https://www.datacamp.com/fr/blog/top-cloud-conferences",
+    summary: "Présentation de la conférence sur l'infrastructure du cloud et de l'IA, mettant en avant les dernières innovations et tendances du secteur.",
+    content: "DataCamp fait le point sur les innovations attendues dans les infrastructures cloud et IA en 2025.",
+    rating: 4.0,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1575068334921-8d5dbcbf6c6d?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 6,
+    title: "Fuite de données chez Oracle, chiffrement de bout en bout par Google",
+    date: "Avril 2025",
+    source: "L'Usine Digitale",
+    link: "https://www.usine-digitale.fr/cloud/",
+    summary: "Revue des principales actualités en cybersécurité, incluant des incidents majeurs et des avancées en matière de protection des données.",
+    content: "L'Usine Digitale fait le point sur la semaine avec des incidents de sécurité cloud et les réponses des fournisseurs.",
+    rating: 5.0,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1478432780021-b8d273730d8c?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 7,
+    title: "CLOUD COMPUTING - CERT-FR - l'ANSSI",
+    date: "Mars 2025",
+    source: "CERT-FR",
+    link: "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2025-CTI-001.pdf",
+    summary: "Rapport de l'ANSSI sur les menaces et incidents liés au cloud computing, avec des recommandations pour renforcer la sécurité.",
+    content: "Ce rapport dresse un panorama des menaces ciblant les infrastructures cloud et propose des recommandations concrètes.",
+    rating: 5.0,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1456428746267-a1756408f782?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 8,
+    title: "DS Smith pousse ses données sur le cloud d'AWS",
+    date: "Janvier 2024",
+    source: "Le Monde Informatique",
+    link: "https://www.lemondeinformatique.fr/cloud-computing-68.html",
+    summary: "Étude de cas sur la migration des données de DS Smith vers AWS, illustrant les bénéfices et défis d'une telle transition.",
+    content: "DS Smith migre vers AWS pour améliorer son agilité et sa scalabilité, tout en sécurisant ses données critiques.",
+    rating: 4.0,
+    year: "2024",
+    backgroundImage: "url('https://images.unsplash.com/photo-1473773508845-188df298d2d1?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 9,
+    title: "The Future of Cloud Computing: What to Expect in 2025 and Beyond",
+    date: "Mars 2024",
+    source: "WebClues Infotech",
+    link: "https://www.webcluesinfotech.com/the-future-of-cloud-computing-what-to-expect-in-2024-and-beyond/",
+    summary: "Prévisions sur l'évolution du cloud computing après 2025, avec un accent sur l'intégration de l'IA et de l'apprentissage automatique.",
+    content: "WebClues Infotech livre ses prévisions sur le futur du cloud et les évolutions attendues.",
+    rating: 4.0,
+    year: "2024",
+    backgroundImage: "url('https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=500&auto=format&fit=crop')"
+  },
+
+  {
+    id: 10,
+    title: "The Challenges of Cloud Computing in 2025",
+    date: "Décembre 2024",
+    source: "TV Tech",
+    link: "https://www.tvtechnology.com/opinion/the-challenges-of-cloud-computing-in-2025",
+    summary: "Discussion sur les défis à venir pour le cloud computing, notamment en matière de sécurité et de gestion des données.",
+    content: "TV Tech met en lumière les enjeux stratégiques du cloud pour 2025, tels que la protection des données et la conformité réglementaire.",
+    rating: 5.0,
+    year: "2024",
+    backgroundImage: "url('https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=500&auto=format&fit=crop')",
+  },
+  {
+    id: 11,
+    title: "Cloud computing - Le Monde Informatique",
+    date: "Novembre 2023",
+    source: "Le Monde Informatique",
+    link: "https://www.lemondeinformatique.fr/cloud-computing-83-page-28.html",
+    summary: "Analyse des tendances du cloud computing en 2023, avec un focus sur les opportunités d'emploi dans le secteur IT.",
+    content: "Un aperçu des tendances majeures du cloud computing pour 2023 et de leur impact sur le marché de l'emploi IT.",
+    rating: 4.0,
+    year: "2023",
+    backgroundImage: "url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 12,
+    title: "Cloud computing trends to expect in 2023",
+    date: "Novembre 2023",
+    source: "MSRcosmos",
+    link: "https://www.msrcosmos.com/blog/cloud-computing-trends-to-expect-in-2023/",
+    summary: "Présentation des tendances attendues en cloud computing pour 2023, incluant la sécurité, l'IA et les stratégies hybrides.",
+    content: "MSRcosmos explore les tendances cloud dominantes qui façonneront l'année 2023.",
+    rating: 4.0,
+    year: "2023",
+    backgroundImage: "url('https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 13,
+    title: "Top 10 Cloud Computing Trends to Follow in 2023",
+    date: "Novembre 2023",
+    source: "ESDS",
+    link: "https://www.esds.co.in/blog/top-10-cloud-computing-trends-for-2023/",
+    summary: "Liste des dix principales tendances du cloud computing en 2023, avec des insights sur l'adoption et l'innovation.",
+    content: "ESDS dévoile les 10 tendances incontournables du cloud computing pour rester compétitif en 2023.",
+    rating: 3.0,
+    year: "2023",
+    backgroundImage: "url('https://images.unsplash.com/photo-1613665813427-5929e144e9d9?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 14,
+    title: "Cloud computing - Wikipedia",
+    date: "Avril 2025",
+    source: "Wikipedia",
+    link: "https://en.wikipedia.org/wiki/Cloud_computing",
+    summary: "Article encyclopédique détaillant les concepts, fournisseurs et évolutions du cloud computing jusqu'en 2025.",
+    content: "Une ressource encyclopédique complète pour comprendre l'écosystème du cloud computing.",
+    rating: 4.0,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1604951066481-63d777899158?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 15,
+    title: "Cloud Market Share 2025 - Rami Naomi",
+    date: "Mars 2025",
+    source: "Rami Naomi",
+    link: "https://raminaomi.pages.dev/rmxfpj-cloud-market-share-2025-nmteyi/",
+    summary: "Analyse des parts de marché des principaux fournisseurs de services cloud en 2025, avec des données chiffrées.",
+    content: "Rami Naomi propose une étude détaillée du marché cloud, avec un focus sur les leaders du secteur.",
+    rating: 4.0,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1617364855497-0f8a1c1caaa0?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 16,
+    title: "Les 15 plus grandes pannes cloud de 2023",
+    date: "Décembre 2023",
+    source: "CRN",
+    link: "https://www.crn.com/news/cloud/the-15-biggest-cloud-outages-of-2023",
+    summary: "Un récapitulatif des principales interruptions de services cloud survenues en 2023, impliquant AWS, Microsoft et Google. Analyse de la résilience cloud.",
+    content: "CRN dresse la liste des pannes majeures ayant affecté les fournisseurs cloud en 2023.",
+    rating: 4.4,
+    year: "2023",
+    backgroundImage: "url('https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=500&auto=format&fit=crop')"
+  },
+  {
+    id: 17,
+    title: "Google Cloud Next 2025 : avancées majeures en IA et infrastructure cloud",
+    date: "Avril 2025",
+    source: "ITPro",
+    link: "https://www.itpro.com/cloud/live/google-cloud-next-2025-all-the-news-and-updates-live",
+    summary: "Lors de la conférence Google Cloud Next 2025, Google a dévoilé l'Ironwood TPU et des outils comme Vertex AI Agent Engine pour renforcer l'intégration de l'IA dans le cloud.",
+    content: "La conférence annuelle Google Cloud Next 2025 a été marquée par des annonces majeures dans le domaine de l'IA appliquée au cloud.",
+    rating: 4.8,
+    year: "2025",
+    backgroundImage: "url('https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=500&auto=format&fit=crop')"
+  }
+]
+
+
+      // Fonction pour générer les cartes d'articles avec optimisations
+      function generateArticleCards() {
+        const articlesContainer = document.getElementById('veille-articles');
+        if (!articlesContainer) return;
+        
+        // Vider le conteneur existant
+        articlesContainer.innerHTML = '';
+        
+        // Optimisation: créer un fragment pour éviter les reflows multiples
+        const fragment = document.createDocumentFragment();
+        
+        // Générer toutes les cartes
+        veilleArticles.forEach((article, index) => {
+          // Créer le HTML pour le rating avec étoiles
+          let ratingHTML = '';
+          const fullStars = Math.floor(article.rating);
+          const hasHalfStar = article.rating % 1 >= 0.5;
+          const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+          
+          for (let i = 0; i < fullStars; i++) {
+            ratingHTML += '<i class="fas fa-star"></i>';
+          }
+          if (hasHalfStar) {
+            ratingHTML += '<i class="fas fa-star-half-alt"></i>';
+          }
+          for (let i = 0; i < emptyStars; i++) {
+            ratingHTML += '<i class="far fa-star"></i>';
+          }
+          
+          // Créer la carte d'article avec accessibilité améliorée
+          const card = document.createElement('div');
+          card.className = 'veille-card';
+          card.dataset.id = article.id;
+          card.dataset.year = article.year;
+          card.style.animationDelay = `${index * 0.1}s`;
+          card.setAttribute('tabindex', '0'); // Rendre focusable pour accessibilité
+          card.setAttribute('role', 'article');
+          
+          // Définir l'image d'arrière-plan comme propriété CSS personnalisée
+          if (article.backgroundImage) {
+            card.style.setProperty('--card-bg-image', article.backgroundImage);
+          }
+          
+          card.innerHTML = `
+            <div class="veille-card-header">
+              <h3 class="veille-card-title">${article.title}</h3>
+              <div class="veille-card-meta">
+                <div class="veille-card-date">
+                  <i class="far fa-calendar-alt"></i> ${article.date}
+                </div>
+                <div class="veille-card-source">
+                  <i class="fas fa-globe"></i> ${article.source}
+                </div>
+              </div>
+            </div>
+            <div class="veille-card-content">
+              <p class="veille-card-summary">${article.summary}</p>
+              <div class="veille-card-footer">
+                <div class="veille-card-rating" title="Note: ${article.rating}/5">
+                  ${ratingHTML}
+                </div>
+                <a href="${article.link}" class="veille-card-btn" target="_blank" rel="noopener noreferrer" aria-label="En savoir plus sur ${article.title}">
+                  En savoir plus <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          `;
+          
+          // Ajouter des écouteurs d'événements pour une meilleure expérience utilisateur
+          card.addEventListener('keydown', function(e) {
+            // Permettre l'ouverture du lien avec la touche Entrée quand la carte est focus
+            if (e.key === 'Enter') {
+              const link = this.querySelector('.veille-card-btn');
+              if (link) link.click();
+            }
+          });
+          
+          fragment.appendChild(card);
+        });
+        
+        // Ajouter toutes les cartes d'un coup pour éviter les reflows multiples
+        articlesContainer.appendChild(fragment);
+        
+        // Observer l'intersection pour animer les cartes lors du défilement
+        setupIntersectionObserver();
+      }
+
+      // Fonction pour filtrer les articles avec optimisations
+      function filterArticles(filter, sort) {
+        const cards = document.querySelectorAll('.veille-card');
+        let visibleCards = Array.from(cards);
+        
+        // Masquer toutes les cartes d'abord
+        cards.forEach(card => {
+          card.style.display = 'none';
+        });
+        
+        // Filtrer par année
+        if (filter && filter !== 'all') {
+          visibleCards = visibleCards.filter(card => card.getAttribute('data-year') === filter);
+        }
+        
+        // Afficher les cartes filtrées avec une animation progressive
+        visibleCards.forEach((card, index) => {
+          // Réinitialiser les styles
+          card.style.animation = 'none';
+          card.offsetHeight; // Force reflow
+          
+          // Appliquer l'animation avec délai progressif
+          card.style.display = 'flex';
+          card.style.animationDelay = `${index * 0.08}s`;
+          card.style.animation = 'fadeInStaggered 0.5s ease forwards';
+        });
+        
+        // Trier les cartes visibles si nécessaire
+        if (sort) {
+          sortArticles(sort);
+        }
+        
+        // Afficher un message si aucun article ne correspond
+        const articlesContainer = document.getElementById('veille-articles');
+        if (visibleCards.length === 0 && articlesContainer) {
+          const noResults = document.createElement('div');
+          noResults.className = 'no-results';
+          noResults.innerHTML = '<i class="fas fa-search"></i><p>Aucun article ne correspond à ce filtre</p>';
+          articlesContainer.appendChild(noResults);
+        }
+      }
+
+      // Fonction de tri des articles optimisée
+      function sortArticles(sortType) {
+        const container = document.getElementById('veille-articles');
+        if (!container) return;
+        
+        const cards = Array.from(container.querySelectorAll('.veille-card:not([style*="display: none"])'));
+        
+        // Map pour l'ordre des mois
+        const monthsOrder = {
+          'Janvier': 1, 'Février': 2, 'Mars': 3, 'Avril': 4, 'Mai': 5, 'Juin': 6,
+          'Juillet': 7, 'Août': 8, 'Septembre': 9, 'Octobre': 10, 'Novembre': 11, 'Décembre': 12
+        };
+        
+        // Extraire et mémoriser les dates pour éviter de répéter le parsing
+        const cardDates = new Map();
+        
+        cards.forEach(card => {
+          const dateElement = card.querySelector('.veille-card-date');
+          if (dateElement) {
+            const dateText = dateElement.textContent.trim();
+            const monthMatch = dateText.match(/([A-Za-zÀ-ÿ]+)/);
+            const yearMatch = dateText.match(/(\d{4})/);
+            
+            const month = monthMatch ? monthsOrder[monthMatch[1]] || 0 : 0;
+            const year = yearMatch ? parseInt(yearMatch[1]) : 0;
+            
+            cardDates.set(card, { month, year });
+          }
+        });
+        
+        // Trier en fonction de la direction
+        cards.sort((a, b) => {
+          const dateA = cardDates.get(a) || { year: 0, month: 0 };
+          const dateB = cardDates.get(b) || { year: 0, month: 0 };
+          
+          if (sortType === 'newest') {
+            // Plus récent d'abord
+            if (dateA.year !== dateB.year) {
+              return dateB.year - dateA.year;
+            }
+            return dateB.month - dateA.month;
+          } else {
+            // Plus ancien d'abord
+            if (dateA.year !== dateB.year) {
+              return dateA.year - dateB.year;
+            }
+            return dateA.month - dateB.month;
+          }
+        });
+        
+        // Réorganiser les cartes dans le container
+        cards.forEach(card => {
+          container.appendChild(card);
+        });
+        
+        // Animer avec un délai pour une meilleure expérience
+        cards.forEach((card, index) => {
+          card.style.animation = 'none';
+          card.offsetHeight; // Force reflow
+          card.style.animationDelay = `${index * 0.05}s`;
+          card.style.animation = 'fadeInStaggered 0.4s ease forwards';
+        });
+      }
+      
+      // Observer pour animer les cartes lors du défilement
+      function setupIntersectionObserver() {
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const card = entry.target;
+                const index = Array.from(card.parentNode.children).indexOf(card);
+                card.style.animationDelay = `${index * 0.05}s`;
+                card.classList.add('animated');
+                observer.unobserve(card);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px 100px 0px' });
+          
+          document.querySelectorAll('.veille-card').forEach(card => {
+            observer.observe(card);
+          });
+        }
+      }
+      
+      // Animation subtile des étoiles en arrière-plan
+      function createTwinklingStars() {
+        const section = document.querySelector('.articles-section');
+        if (!section) return;
+        
+        // Réduire le nombre d'étoiles sur mobile pour les performances
+        const isMobile = window.innerWidth < 768;
+        const starCount = isMobile ? 30 : 50;
+        
+        for (let i = 0; i < starCount; i++) {
+          const star = document.createElement('div');
+          star.className = 'twinkling-star';
+          star.style.top = `${Math.random() * 100}%`;
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.animationDelay = `${Math.random() * 5}s`;
+          star.style.width = `${Math.random() * 2 + 1}px`;
+          star.style.height = star.style.width;
+          section.appendChild(star);
+        }
+      }
+      
+      // Gestion des filtres avec état actif
+      function setupFilters() {
+        document.querySelectorAll('.filter-btn').forEach(button => {
+          button.addEventListener('click', () => {
+            // Gestion de l'état actif des boutons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+              btn.classList.remove('active');
+              btn.setAttribute('aria-pressed', 'false');
+            });
+            button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
+            
+            // Appliquer le filtre ou le tri
+            const filter = button.getAttribute('data-filter');
+            const sort = button.getAttribute('data-sort');
+            
+            filterArticles(filter, sort);
+          });
+        });
+      }
+      
+      // Initialisation
+      generateArticleCards();
+      setupFilters();
+      createTwinklingStars();
+      
+      // Optimisation pour la performance
+      window.addEventListener('load', function() {
+        // Vérifier les préférences de réduction de mouvement
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.querySelector('.articles-section').classList.add('reduced-motion');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

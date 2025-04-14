@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bilan de mon parcours professionnel et académique - Portfolio Galaxie." />
+  <title>Bilan - Portfolio</title>
+
+  <!-- Google Fonts - Orbitron pour un design spatial -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome pour les icônes spatiales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Étoiles de fond dynamiques (canvas) -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Planètes décoratives -->
+  <div class="planet planet-1"></div>
+  <div class="planet planet-3"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-container">
+      <div class="loader-rocket">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <div class="loader-text">Initialisation du système...</div>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation principale -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-text">Elijah<span class="highlight">Dabo</span></span>
+        </a>
+      </div>
+      <div class="nav-toggle" aria-label="Ouvrir la navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="entreprise.html"><i class="fas fa-building"></i> Entreprise</a></li>
+        <li><a href="realisations.html"><i class="fas fa-rocket"></i> Réalisations</a></li>
+        <li><a href="veille.html"><i class="fas fa-satellite"></i> Veille</a></li>
+        <li><a href="bilan.html" class="active"><i class="fas fa-flag-checkered"></i> Bilan</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Activer ou désactiver le mode sombre">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section Hero -->
+    <section class="hero section">
+      <div class="hero-content">
+        <h1 class="glitch-text">Bilan</h1>
+        <p class="hero-description">Un regard sur mon parcours, les compétences acquises et mes perspectives d'avenir.</p>
+      </div>
+    </section>
+
+    <!-- Section Bilan -->
+    <section class="section">
+      <div class="content-section">
+        <h2>Mon Parcours</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>L'avant ESIEE-IT</h3>
+            <div class="timeline-date">2022 - 2023</div>
+            <p>Cette année a été une étape clé de mon parcours. Engagé dans la vie professionnelle, j’ai pris le temps de consolider mes expériences et de réfléchir à mon avenir.
+              Mon intérêt de longue date pour l’informatique s’est affirmé au fil des mois, m’amenant à me réorienter avec conviction vers ce secteur porteur et innovant.</p>
+            <ul>
+              <li>Rigueur et organisation dans le travail</li>
+              <li>Gestion des priorités et autonomie</li>
+              <li>Ouverture d’esprit et volonté d’apprentissage</li>
+              <li>Prise d’initiative pour construire un nouveau projet professionnel</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <h3>Première Année</h3>
+            <div class="timeline-date">2023 - 2024</div>
+            <p>Ayant plus une attirance pour le côté artistique du développement, j’ai renforcé mes compétences en design d’interface. Lors de la refonte graphique d’une application mobile en entreprise, j’ai su apporter une identité visuelle moderne et une expérience utilisateur fluide, répondant aux attentes des utilisateurs finaux.</p>
+            <ul>
+              <li>Création de maquettes fonctionnelles</li>
+              <li>Conception centrée utilisateur</li>
+              <li>Apprentissage des bases du design web et mobile</li>
+              <li>Cohérence graphique et ergonomie des interfacese</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <h3>Deuxième Année</h3>
+            <div class="timeline-date">2024 - 2025</div>
+            <p>Tout au long de cette année, j'ai consolidé mes compétences en HTML, CSS, JavaScript et Python et autres avec une forte appétence pour la création d’interfaces modernes et interactives.
+              J’ai pris plaisir à concevoir des expériences utilisateurs soignées, en particulier sur des projets tels que JojoLegion ou Projet JO Ticket ou encore Nimbus Railway, où le souci du détail visuel et de la fluidité de navigation pouvais être essentiel.</p>
+            <ul>
+              <li>Maîtrise des langages fondamentaux du web</li>
+              <li>Conception d’interfaces responsives et dynamiques</li>
+              <li>Optimisation des performances frontend et backend</li>
+              <li>Accessibilité et respect des bonnes pratiques</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Perspectives d'avenir</h2>
+        
+<div class="perspectives-intro">
+  <p>Fort de ces expériences et compétences acquises, mon projet professionnel s'articule autour de plusieurs objectifs :</p>
+</div>
+
+<div class="perspective-cards">
+  <div class="perspective-card">
+    <div class="perspective-icon">
+      <i class="fas fa-paint-brush"></i>
+    </div>
+    <h3>L'univers du front-end et du design</h3>
+    <p>Approfondir mes compétences en design d'interface pour créer des expériences utilisateurs immersives et intuitives, avec un focus particulier sur l'innovation visuelle.</p>
+  </div>
+  
+  <div class="perspective-card">
+    <div class="perspective-icon">
+      <i class="fas fa-users"></i>
+    </div>
+    <h3>La gestion de projet et le management</h3>
+    <p>Évoluer vers des postes de leadership technique pour guider des équipes de développement et contribuer à des projets ambitieux à fort impact.</p>
+  </div>
+</div>
+        
+        <h2>Réflexion personnelle</h2>
+        <p>Mon parcours n’a pas été linéaire, mais c’est précisément ce qui fait aujourd’hui ma force.
+          Après le lycée en STMG, j’ai pris le temps de m’interroger sur mon avenir, et j’ai fait le choix déterminé de m’orienter vers un secteur en pleine expansion : l’informatique.</p>
+        
+        <p>Ce BTS SIO SLAM a été pour moi une révélation. Il m’a permis de développer des compétences techniques solides, mais surtout d’affiner ma vision du numérique et de la place que je souhaite y occuper.</p>
+
+        <p>La réalisation de ce portfolio est d’ailleurs le reflet direct de ce parcours : un projet pensé dans ses moindres détails, où j’ai pu combiner mes compétences techniques, mon goût pour le design, et l’appui stratégique de l’intelligence artificielle pour optimiser le résultat final.</p>
+        
+        <div class="quote-block">
+          <blockquote>
+            "L'innovation distingue les leaders des suiveurs."
+          </blockquote>
+          <cite>— Steve Jobs</cite>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Navigation Rapide</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="entreprise.html">Entreprise</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Me Contacter</h3>
+        <p><i class="fas fa-envelope"></i> elijahdabopro@gmail.com</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Dabo Elijah. Tous droits réservés.</p>
+      <a href="mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>

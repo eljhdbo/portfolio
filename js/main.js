@@ -22,11 +22,10 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Python", "Jeu", "Manga", "Scripte"],
     documents: [
-      {name: "Contexte", type: "md", icon: "fa-file-alt"},
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Capture d'écran code", type: "image", icon: "fa-image"},
-      {name: "Capture d'écran du projet final", type: "image", icon: "fa-image"},
-      {name: "Extrait de code", type: "python", icon: "fa-file-code"}
+      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf", filename: "Cahier des charges — textadventure.pdf"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "READMEtextadventure.md"},
+      {name: "Capture d'écran", type: "image", icon: "fa-image", filename: "textadventure.png"},
+      {name: "Code source", type: "python", icon: "fa-file-code", filename: "textadventure.py"}
     ],
     period: "Janvier - Mars 2023",
     duration: "3 mois",
@@ -44,11 +43,8 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["HTML/CSS", "JavaScript", "Django", "Base de données", "Travail d'équipe", "API Jikan", "Site communautaire"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt"},
-      {name: "Charte graphique", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Planning", type: "lien Trello", icon: "fa-link"},
-      {name: "Diagramme de base de données", type: "image", icon: "fa-image"}
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README.md"},
+      {name: "Logo du projet", type: "image", icon: "fa-image", filename: "logo_jojolegion.png"}
     ],
     period: "Avril - Juin 2023",
     duration: "3 mois",
@@ -66,9 +62,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["React/TypeScript", "Gestion", "EPI", "Automatisation"],
     documents: [
-      {name: "Diagramme de cas d'utilisation", type: "", icon: "fa-project-diagram"},
-      {name: "README", type: "", icon: "fa-file-alt"},
-      {name: "Aperçu du projet", type: "", icon: "fa-eye"}
+      {name: "Diagramme de cas d'utilisation", type: "image", icon: "fa-project-diagram", filename: "diagramme.png"}
     ],
     period: "Septembre - Novembre 2023",
     duration: "3 mois",
@@ -86,11 +80,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["JavaFX", "Maquettage", "Harry Potter", "SceneBuilder", "Planification"],
     documents: [
-      {name: "Maquette", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Modèle relationnel", type: "md", icon: "fa-database"},
-      {name: "README", type: "md", icon: "fa-file-alt"},
-      {name: "Planning", type: "image", icon: "fa-image"},
-      {name: "Cahier technique", type: "md", icon: "fa-book"}
+      {name: "Maquette", type: "image", icon: "fa-file-image", filename: "maquette.png"}
     ],
     period: "Octobre - Décembre 2023",
     duration: "3 mois",
@@ -108,9 +98,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Django", "Application", "QR Code", "Gestion", "Authentification", "JO2024"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt"},
-      {name: "Schéma explicatif", type: "image", icon: "fa-image"},
-      {name: "Aperçu du projet", type: "images", icon: "fa-images"}
+      {name: "Schéma explicatif", type: "image", icon: "fa-image", filename: "schema.png"}
     ],
     period: "Janvier - Mars 2024",
     duration: "3 mois",
@@ -128,9 +116,9 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Python", "Automatisation", "Sécurité", "QR Code", "JSON", "Paris 2024"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt"},
-      {name: "Aperçu du projet", type: "image", icon: "fa-image"},
-      {name: "Extrait de code", type: "python", icon: "fa-file-code"}
+      {name: "Aperçu du projet", type: "image", icon: "fa-image", filename: "billeterie.png"},
+      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf", filename: "Cahier des charges — Billeterie *JO Tickets*.pdf"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_billeterie.md"}
     ],
     period: "Février - Avril 2024",
     duration: "3 mois",
@@ -150,8 +138,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Optimisation", "Performance", "Analyse", "Refactoring"],
     documents: [
-      {name: "Présentation", type: "image", icon: "fa-file-powerpoint"},
-      {name: "Capture d'écran", type: "image", icon: "fa-image"}
+      {name: "Présentation", type: "image", icon: "fa-file-powerpoint", filename: "presentation.png"}
     ],
     period: "Mai - Juin 2024",
     duration: "2 mois",
@@ -169,11 +156,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Google Forms", "Analyse de données", "UX", "Automatisation"],
     documents: [
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Planning", type: "image", icon: "fa-calendar"},
-      {name: "Lien Google Form", type: "", icon: "fa-link"},
-      {name: "Extrait de code", type: "image", icon: "fa-file-code"},
-      {name: "Message de déploiement", type: "pdf", icon: "fa-envelope"}
+      {name: "Exemple de sondage", type: "image", icon: "fa-file-image", filename: "sondage.png"}
     ],
     period: "Juin - Juillet 2024",
     duration: "2 mois",
@@ -191,11 +174,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Mobile", "UI/UX", "Base de données", "Authentification"],
     documents: [
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Planning", type: "image", icon: "fa-calendar"},
-      {name: "Capture d'écran", type: "image", icon: "fa-image"},
-      {name: "Modèle relationnel", type: "image", icon: "fa-database"},
-      {name: "Message de déploiement", type: "pdf", icon: "fa-envelope"}
+      {name: "Maquette interface", type: "image", icon: "fa-mobile-alt", filename: "interface.png"}
     ],
     period: "Juillet - Septembre 2024",
     duration: "3 mois",
@@ -213,7 +192,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["RGPD", "Sécurité", "Documentation", "Audit"],
     documents: [
-      {name: "Extrait registre de traitement", type: "image", icon: "fa-clipboard-list"}
+      {name: "Extrait registre", type: "image", icon: "fa-clipboard-list", filename: "registre.png"}
     ],
     period: "Septembre - Octobre 2024",
     duration: "2 mois",
@@ -231,10 +210,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["UI/UX", "Design", "Mobile", "Accessibilité"],
     documents: [
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf"},
-      {name: "Planning", type: "image", icon: "fa-calendar"},
-      {name: "Charte graphique de l'entreprise", type: "pdf", icon: "fa-palette"},
-      {name: "Capture d'écran avant après", type: "image", icon: "fa-images"}
+      {name: "Comparaison avant-après", type: "image", icon: "fa-images", filename: "comparaison.png"}
     ],
     period: "Octobre - Novembre 2024",
     duration: "2 mois",
@@ -669,7 +645,7 @@ function initializeScrollEffects() {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observe(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -959,43 +935,99 @@ function openProjectModal(projectId) {
         projectDetails.documents.forEach(doc => {
           const docLink = document.createElement('a');
           
-          // Construire le chemin du fichier basé sur le type et le nom
-          let filePath = 'assets/documents/';
+          // Déterminer le nom du dossier du projet
+          let projectFolder = '';
           
-          // Déterminer l'extension et le sous-dossier en fonction du type
-          let fileExtension = '';
-          let subFolder = '';
-          
-          switch (doc.type?.toLowerCase()) {
-            case 'md':
-            case 'markdown':
-              fileExtension = '.md';
-              subFolder = 'markdown/';
+          switch (projectDetails.title.toLowerCase().replace(/\s+/g, '_')) {
+            case "textadventure":
+              projectFolder = 'textadventure';
               break;
-            case 'pdf':
-              fileExtension = '.pdf';
-              subFolder = 'pdf/';
+            case "jojolegion":
+              projectFolder = 'jojolegion';
               break;
-            case 'image':
-            case 'images':
-              fileExtension = '.png';  // Par défaut .png, peut être remplacé
-              subFolder = 'images/';
+            case "gestepi":
+              projectFolder = 'gestepi';
               break;
-            case 'python':
-            case 'js':
-            case 'javascript':
-            case 'html':
-            case 'css':
-              fileExtension = '.' + doc.type.toLowerCase();
-              subFolder = 'code/';
+            case "nimbus_railway":
+              projectFolder = 'nimbus_railway';
+              break;
+            case "projet_jo_ticket":
+              projectFolder = 'projet_jo_ticket';
+              break;
+            case "génération_de_ticket_jo":
+            case "generation_de_ticket_jo":
+              projectFolder = 'generation_de_ticket_jo';
+              break;
+            case "optimisation_des_logiciels_entreprise":
+              projectFolder = 'optimisation_logiciels';
+              break;
+            case "mission_de_sondages":
+              projectFolder = 'mission_de_sondages';
+              break;
+            case "développement_section_utilisateur_(app_mobile)":
+              projectFolder = 'section_utilisateur';
+              break;
+            case "mise_en_conformité_rgpd":
+              projectFolder = 'rgpd';
+              break;
+            case "refonte_graphique_application_mobile":
+              projectFolder = 'refonte_graphique';
               break;
             default:
-              fileExtension = '';
-              break;
+              // Fallback: utiliser directement le titre formaté
+              projectFolder = projectDetails.title.toLowerCase().replace(/\s+/g, '_');
           }
           
-          // Construire le chemin complet
-          filePath += subFolder + doc.name.replace(/\s+/g, '_').toLowerCase() + fileExtension;
+          // Utiliser directement le nom de fichier fourni s'il existe
+          let filePath = '';
+          if (doc.filename) {
+            filePath = `assets/documents/${projectFolder}/${doc.filename}`;
+          } else {
+            // Sinon, construire un nom de fichier basé sur le nom du document
+            // et l'extension selon le type
+            let fileName = doc.name.replace(/\s+/g, '_').toLowerCase();
+            
+            // Ajouter l'extension en fonction du type
+            switch (doc.type?.toLowerCase()) {
+              case 'md':
+              case 'markdown':
+                fileName += '.md';
+                break;
+              case 'pdf':
+                fileName += '.pdf';
+                break;
+              case 'python':
+                fileName += '.py';
+                break;
+              case 'js':
+              case 'javascript':
+                fileName += '.js';
+                break;
+              case 'html':
+                fileName += '.html';
+                break;
+              case 'css':
+                fileName += '.css';
+                break;
+              case 'png':
+              case 'image':
+              case 'images':
+                fileName += '.png';
+                break;
+              case 'jpg':
+              case 'jpeg':
+                fileName += '.jpg';
+                break;
+              case 'webp':
+                fileName += '.webp';
+                break;
+              default:
+                // Si pas d'extension spécifiée, ne rien ajouter
+                break;
+            }
+            
+            filePath = `assets/documents/${projectFolder}/${fileName}`;
+          }
           
           // Définir les attributs du lien
           docLink.href = filePath;
@@ -1007,7 +1039,7 @@ function openProjectModal(projectId) {
           }
           
           // Pour les images, ouvrir dans un nouvel onglet
-          if (['image', 'images'].includes(doc.type?.toLowerCase())) {
+          if (['image', 'images', 'png', 'jpg', 'jpeg', 'webp'].includes(doc.type?.toLowerCase())) {
             docLink.setAttribute('target', '_blank');
           }
           
@@ -1017,20 +1049,37 @@ function openProjectModal(projectId) {
           
           // Ajouter un gestionnaire d'événements pour les erreurs de chargement
           docLink.addEventListener('error', function(e) {
-            console.warn(`Le document ${doc.name} n'a pas pu être chargé.`);
+            console.warn(`Le document ${doc.name} n'a pas pu être chargé:`, filePath);
           });
           
           modalDocuments.appendChild(docLink);
         });
       } else {
-        // Format chaîne simple
+        // Format chaîne simple (pour la rétrocompatibilité)
         const documentItems = projectDetails.documents.split(',');
         documentItems.forEach(item => {
           const docName = item.trim();
           const docLink = document.createElement('a');
           
-          // Lien générique pour les documents listés comme chaînes
-          docLink.href = `assets/documents/${docName.toLowerCase().replace(/\s+/g, '_')}.pdf`;
+          // Déterminer le dossier du projet
+          let projectFolder = projectDetails.title.toLowerCase().replace(/\s+/g, '_');
+          
+          // Adapter le dossier au format de votre arborescence
+          switch (projectFolder) {
+            case "optimisation_des_logiciels_entreprise":
+              projectFolder = 'optimisation_logiciels';
+              break;
+            case "développement_section_utilisateur_(app_mobile)":
+              projectFolder = 'section_utilisateur';
+              break;
+            case "mise_en_conformité_rgpd":
+              projectFolder = 'rgpd';
+              break;
+            // Ajoutez d'autres cas spécifiques si nécessaire
+          }
+          
+          // Lien générique
+          docLink.href = `assets/documents/${projectFolder}/${docName.toLowerCase().replace(/\s+/g, '_')}.pdf`;
           docLink.className = 'document-link';
           docLink.setAttribute('download', '');
           docLink.innerHTML = `<i class="far fa-file"></i> ${docName}`;

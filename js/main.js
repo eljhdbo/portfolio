@@ -1468,3 +1468,101 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Fonction à ajouter à la fin de votre fichier main.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Vérifier si nous sommes sur la page de réalisations
+  if (window.location.pathname.includes('realisations.html')) {
+    // S'assurer que la fonction openProjectModal est disponible
+    if (typeof window.openProjectModal === 'function') {
+      // Sauvegarder la fonction originale
+      const originalOpenModal = window.openProjectModal;
+      
+      // Remplacer la fonction openProjectModal
+      window.openProjectModal = function(projectId) {
+        // Appeler la fonction originale d'abord
+        originalOpenModal(projectId);
+        
+        setTimeout(() => {
+          try {
+            console.log("Ouverture du projet ID:", projectId);
+            
+            // Trouver le projet correspondant à l'ID spécifié
+            const project = projectsData.find(p => p.id === parseInt(projectId));
+            if (!project) {
+              console.error("Projet non trouvé avec l'ID:", projectId);
+              return;
+            }
+            
+            console.log("Projet trouvé:", project.title);
+            
+            // Table de correspondance des dossiers
+            const folderMapping = {
+              "TextAdventure": "textadventure",
+              "JojoLegion": "jojolegion",
+              "GestEPI": "gestepi",
+              "Nimbus Railway": "nimbus_railway",
+              "Projet JO Ticket": "projet_jo_ticket",
+              "Génération de Ticket JO": "generation_de_ticket_jo",
+              "Mission de sondages": "mission_de_sondages",
+              "Développement section utilisateur (App mobile)": "section_utilisateur",
+              "Refonte graphique application mobile": "refonte_graphique"
+            };
+            
+            // Déterminer le dossier du projet
+            let projectFolder = "";
+            if (folderMapping[project.title]) {
+              projectFolder = folderMapping[project.title];
+              console.log("Dossier mappé:", projectFolder);
+            } else {
+              projectFolder = project.title.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9]+/g, '_');
+              console.log("Dossier normalisé:", projectFolder);
+            }
+            
+            // Vérifier la section des documents
+            const documentsSection = document.querySelector('.documents-section');
+            if (!documentsSection) {
+              console.error("Section de documents non trouvée");
+              return;
+            }
+            
+            // Supprimer tout bouton existant pour éviter les doublons
+            const existingButtons = documentsSection.querySelectorAll('.open-folder-btn');
+            existingButtons.forEach(btn => btn.remove());
+            
+            // Créer le nouveau bouton
+            const openButton = document.createElement('a');
+            openButton.href = `assets/documents/${projectFolder}/`;
+            openButton.target = "_blank";
+            openButton.className = "document-link open-folder-btn";
+            openButton.innerHTML = '<i class="fas fa-folder-open"></i> Ouvrir tous les fichiers dans une nouvelle page';
+            openButton.style.display = 'block';
+            openButton.style.width = '100%';
+            openButton.style.marginTop = '1rem';
+            openButton.style.textAlign = 'center';
+            openButton.style.background = 'var(--primary-light)';
+            
+            // Ajouter l'attribut data pour le débogage
+            openButton.setAttribute('data-project', project.title);
+            openButton.setAttribute('data-folder', projectFolder);
+            
+            // Ajouter le bouton en haut de la section documents
+            const docsTitle = documentsSection.querySelector('h3');
+            if (docsTitle) {
+              documentsSection.insertBefore(openButton, docsTitle.nextSibling);
+            } else {
+              documentsSection.prepend(openButton);
+            }
+            
+            console.log("Bouton ajouté avec succès pour le dossier:", projectFolder);
+          } catch (error) {
+            console.error("Erreur lors de l'ajout du bouton d'ouverture de dossier:", error);
+          }
+        }, 300); // Délai augmenté pour s'assurer que le DOM est complètement prêt
+      };
+    }
+  }
+});

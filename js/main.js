@@ -884,39 +884,40 @@ function openProjectModal(projectId) {
     }
     
     // Génération des étoiles pour la note
-    if (modalRating) {
-      modalRating.innerHTML = '';
-      if (projectDetails.rating) {
-        // Créer les étoiles basées sur la note (sur 5)
-        const fullStars = Math.floor(projectDetails.rating);
-        const hasHalfStar = projectDetails.rating % 1 >= 0.5;
-        
-        // Étoiles pleines
-        for (let i = 0; i < fullStars; i++) {
-          const star = document.createElement('i');
-          star.className = 'fas fa-star';
-          modalRating.appendChild(star);
-        }
-        
-        // Demi-étoile si nécessaire
-        if (hasHalfStar) {
-          const halfStar = document.createElement('i');
-          halfStar.className = 'fas fa-star-half-alt';
-          modalRating.appendChild(halfStar);
-        }
-        
-        // Étoiles vides
-        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-        for (let i = 0; i < emptyStars; i++) {
-          const emptyStar = document.createElement('i');
-          emptyStar.className = 'far fa-star';
-          modalRating.appendChild(emptyStar);
-        }
-      } else {
-        modalRating.textContent = "Non évalué";
-      }
+if (modalRating) {
+  modalRating.innerHTML = '';
+  modalRating.className = 'rating-stars'; // Assurez-vous que cette classe est présente
+  
+  if (projectDetails.rating) {
+    // Créer les étoiles basées sur la note (sur 5)
+    const fullStars = Math.floor(projectDetails.rating);
+    const hasHalfStar = projectDetails.rating % 1 >= 0.5;
+    
+    // Étoiles pleines
+    for (let i = 0; i < fullStars; i++) {
+      const star = document.createElement('i');
+      star.className = 'fas fa-star';
+      modalRating.appendChild(star);
     }
     
+    // Demi-étoile si nécessaire
+    if (hasHalfStar) {
+      const halfStar = document.createElement('i');
+      halfStar.className = 'fas fa-star-half-alt';
+      modalRating.appendChild(halfStar);
+    }
+    
+    // Étoiles vides
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    for (let i = 0; i < emptyStars; i++) {
+      const emptyStar = document.createElement('i');
+      emptyStar.className = 'far fa-star';
+      modalRating.appendChild(emptyStar);
+    }
+  } else {
+    modalRating.textContent = "Non évalué";
+  }
+}   
     // Générer les tags
     modalTags.innerHTML = '';
     projectDetails.tags.forEach(tag => {

@@ -43,7 +43,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["HTML/CSS", "JavaScript", "Django", "Base de données", "Travail d'équipe", "API Jikan", "Site communautaire"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "README.md"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_Jojolegion.md"},
       {name: "Logo du projet", type: "image", icon: "fa-image", filename: "logo_jojolegion.png"}
     ],
     period: "A - Janvier 2025",
@@ -80,7 +80,9 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["JavaFX", "Maquettage", "Harry Potter", "SceneBuilder", "Planification"],
     documents: [
-      {name: "Maquette", type: "image", icon: "fa-file-image", filename: "maquette.png"}
+      {name: "Cahier Techniques", type: "md", icon: "fa-file-alt", filename: "cahier techniques.md"},
+      {name: "Modèle Relationnel", type: "md", icon: "fa-file-alt", filename: "Modèle Relationnel (1).md"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README (3).md"}
     ],
     period: "Décembre - Mars 2025",
     duration: "3 mois",
@@ -98,7 +100,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Django", "Application", "QR Code", "Gestion", "Authentification", "JO2024"],
     documents: [
-      {name: "Schéma explicatif", type: "image", icon: "fa-image", filename: "schema.png"}
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_projet_JO_Ticket.md"}
     ],
     period: "Janvier - Avril 2025",
     duration: "3 mois",
@@ -116,9 +118,8 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Python", "Automatisation", "Sécurité", "QR Code", "JSON", "Paris 2024"],
     documents: [
-      {name: "Aperçu du projet", type: "image", icon: "fa-image", filename: "billeterie.png"},
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf", filename: "Cahier des charges — Billeterie *JO Tickets*.pdf"},
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_billeterie.md"}
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_billeterie.md"},
+      {name: "Code source", type: "python", icon: "fa-file-code", filename: "billetterie.py"}
     ],
     period: "2 semaines",
     duration: "2 semaines",
@@ -131,8 +132,8 @@ const projectsData = [
     id: 7,
     title: "Optimisation des logiciels entreprise",
     description: {
-      short: "Optimisation des performances et de l’ergonomie d’un logiciel interne pour améliorer l’efficacité des utilisateurs.",
-      long: "Optimisation des performances et de l’ergonomie d’un logiciel interne pour améliorer l’efficacité des utilisateurs."
+      short: "Optimisation des performances et de l'ergonomie d'un logiciel interne pour améliorer l'efficacité des utilisateurs.",
+      long: "Optimisation des performances et de l'ergonomie d'un logiciel interne pour améliorer l'efficacité des utilisateurs."
     },
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
@@ -174,7 +175,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Mobile", "Design", "HTML/CSS", "JavaScript"],
     documents: [
-      {name: "Maquette interface", type: "image", icon: "fa-mobile-alt", filename: "interface.png"}
+      {name: "Modèle relationnel", type: "md", icon: "fa-file-alt", filename: "modele relationnel utilisateur.md"}
     ],
     period: "2 semaines",
     duration: "2 semaines",
@@ -206,7 +207,7 @@ const projectsData = [
     },
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
-    tags: ["UI/UX", "Design", "Mobile", "Accessibilité"],
+    tags: ["Design", "Mobile", "Accessibilité"],
     documents: [
       {name: "Comparaison avant-après", type: "image", icon: "fa-images", filename: "comparaison.png"}
     ],
@@ -216,6 +217,34 @@ const projectsData = [
     rating: 5
   }
 ];
+
+// Images génériques pour les projets
+function assignGenericImages() {
+  // Correspondance entre les projets et leurs images génériques
+  const projectImages = {
+    "TextAdventure": "assets/images/projects/adventure-game.jpg",
+    "JojoLegion": "assets/images/projects/anime-site.jpg",
+    "GestEPI": "assets/images/projects/safety-equipment.jpg",
+    "Nimbus Railway": "assets/images/projects/train-management.jpg",
+    "Projet JO Ticket": "assets/images/projects/olympics-ticket.jpg",
+    "Génération de Ticket JO": "assets/images/projects/ticket-generator.jpg",
+    "Optimisation des logiciels entreprise": "assets/images/projects/software-optimization.jpg",
+    "Mission de sondages": "assets/images/projects/survey-app.jpg",
+    "Développement section utilisateur (App mobile)": "assets/images/projects/mobile-app.jpg",
+    "Mise en conformité RGPD": "assets/images/projects/data-protection.jpg",
+    "Refonte graphique application mobile": "assets/images/projects/app-design.jpg"
+  };
+
+  // Attribuer les images aux projets
+  projectsData.forEach(project => {
+    if (projectImages[project.title]) {
+      project.image = projectImages[project.title];
+    }
+  });
+}
+
+// Exécuter la fonction d'attribution d'images
+assignGenericImages();
 
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', () => {
@@ -882,40 +911,41 @@ function openProjectModal(projectId) {
     }
     
     // Génération des étoiles pour la note
-if (modalRating) {
-  modalRating.innerHTML = '';
-  modalRating.className = 'rating-stars'; // Assurez-vous que cette classe est présente
-  
-  if (projectDetails.rating) {
-    // Créer les étoiles basées sur la note (sur 5)
-    const fullStars = Math.floor(projectDetails.rating);
-    const hasHalfStar = projectDetails.rating % 1 >= 0.5;
-    
-    // Étoiles pleines
-    for (let i = 0; i < fullStars; i++) {
-      const star = document.createElement('i');
-      star.className = 'fas fa-star';
-      modalRating.appendChild(star);
+    if (modalRating) {
+      modalRating.innerHTML = '';
+      modalRating.className = 'rating-stars';
+      
+      if (projectDetails.rating) {
+        // Créer les étoiles basées sur la note (sur 5)
+        const fullStars = Math.floor(projectDetails.rating);
+        const hasHalfStar = projectDetails.rating % 1 >= 0.5;
+        
+        // Étoiles pleines
+        for (let i = 0; i < fullStars; i++) {
+          const star = document.createElement('i');
+          star.className = 'fas fa-star';
+          modalRating.appendChild(star);
+        }
+        
+        // Demi-étoile si nécessaire
+        if (hasHalfStar) {
+          const halfStar = document.createElement('i');
+          halfStar.className = 'fas fa-star-half-alt';
+          modalRating.appendChild(halfStar);
+        }
+        
+        // Étoiles vides
+        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+        for (let i = 0; i < emptyStars; i++) {
+          const emptyStar = document.createElement('i');
+          emptyStar.className = 'far fa-star';
+          modalRating.appendChild(emptyStar);
+        }
+      } else {
+        modalRating.textContent = "Non évalué";
+      }
     }
     
-    // Demi-étoile si nécessaire
-    if (hasHalfStar) {
-      const halfStar = document.createElement('i');
-      halfStar.className = 'fas fa-star-half-alt';
-      modalRating.appendChild(halfStar);
-    }
-    
-    // Étoiles vides
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-    for (let i = 0; i < emptyStars; i++) {
-      const emptyStar = document.createElement('i');
-      emptyStar.className = 'far fa-star';
-      modalRating.appendChild(emptyStar);
-    }
-  } else {
-    modalRating.textContent = "Non évalué";
-  }
-}   
     // Générer les tags
     modalTags.innerHTML = '';
     projectDetails.tags.forEach(tag => {
@@ -925,163 +955,188 @@ if (modalRating) {
       modalTags.appendChild(tagElement);
     });
     
-    // Générer les documents avec des liens fonctionnels
+    // PARTIE SIMPLIFIÉE: Gestion des documents avec liens directs
     if (modalDocuments && projectDetails.documents) {
       modalDocuments.innerHTML = '';
+      
+      // Table de correspondance exacte pour les dossiers de projets
+      const folderMapping = {
+        "TextAdventure": "textadventure",
+        "JojoLegion": "jojolegion",
+        "GestEPI": "gestepi",
+        "Nimbus Railway": "nimbus_railway",
+        "Projet JO Ticket": "projet_jo_ticket",
+        "Génération de Ticket JO": "generation_de_ticket_jo",
+        "Optimisation des logiciels entreprise": "optimisation_logiciels",
+        "Mission de sondages": "mission_de_sondages",
+        "Développement section utilisateur (App mobile)": "section_utilisateur",
+        "Mise en conformité RGPD": "rgpd",
+        "Refonte graphique application mobile": "refonte_graphique"
+      };
+      
+      // Déterminer le dossier du projet
+      const projectFolder = folderMapping[projectDetails.title] || 
+        projectDetails.title.toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, '_');
       
       if (Array.isArray(projectDetails.documents)) {
         // Format tableau d'objets
         projectDetails.documents.forEach(doc => {
+          // Créer un lien direct vers le document
           const docLink = document.createElement('a');
           
-          // Déterminer le nom du dossier du projet
-          let projectFolder = '';
-          
-          switch (projectDetails.title.toLowerCase().replace(/\s+/g, '_')) {
-            case "textadventure":
-              projectFolder = 'textadventure';
-              break;
-            case "jojolegion":
-              projectFolder = 'jojolegion';
-              break;
-            case "gestepi":
-              projectFolder = 'gestepi';
-              break;
-            case "nimbus_railway":
-              projectFolder = 'nimbus_railway';
-              break;
-            case "projet_jo_ticket":
-              projectFolder = 'projet_jo_ticket';
-              break;
-            case "génération_de_ticket_jo":
-            case "generation_de_ticket_jo":
-              projectFolder = 'generation_de_ticket_jo';
-              break;
-            case "optimisation_des_logiciels_entreprise":
-              projectFolder = 'optimisation_logiciels';
-              break;
-            case "mission_de_sondages":
-              projectFolder = 'mission_de_sondages';
-              break;
-            case "développement_section_utilisateur_(app_mobile)":
-              projectFolder = 'section_utilisateur';
-              break;
-            case "mise_en_conformité_rgpd":
-              projectFolder = 'rgpd';
-              break;
-            case "refonte_graphique_application_mobile":
-              projectFolder = 'refonte_graphique';
-              break;
-            default:
-              // Fallback: utiliser directement le titre formaté
-              projectFolder = projectDetails.title.toLowerCase().replace(/\s+/g, '_');
-          }
-          
-          // Utiliser directement le nom de fichier fourni s'il existe
+          // Construire l'URL directement avec le nom de fichier fourni
           let filePath = '';
           if (doc.filename) {
             filePath = `assets/documents/${projectFolder}/${doc.filename}`;
           } else {
-            // Sinon, construire un nom de fichier basé sur le nom du document
-            // et l'extension selon le type
-            let fileName = doc.name.replace(/\s+/g, '_').toLowerCase();
+            // Construire un nom de fichier basé sur le nom du document
+            const fileName = doc.name
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .replace(/\s+/g, '_')
+              .toLowerCase();
             
             // Ajouter l'extension en fonction du type
+            let extension = '';
             switch (doc.type?.toLowerCase()) {
               case 'md':
               case 'markdown':
-                fileName += '.md';
+                extension = '.md';
                 break;
               case 'pdf':
-                fileName += '.pdf';
+                extension = '.pdf';
                 break;
               case 'python':
-                fileName += '.py';
+                extension = '.py';
                 break;
               case 'js':
               case 'javascript':
-                fileName += '.js';
+                extension = '.js';
                 break;
               case 'html':
-                fileName += '.html';
+                extension = '.html';
                 break;
               case 'css':
-                fileName += '.css';
+                extension = '.css';
                 break;
               case 'png':
               case 'image':
               case 'images':
-                fileName += '.png';
+                extension = '.png';
                 break;
               case 'jpg':
               case 'jpeg':
-                fileName += '.jpg';
+                extension = '.jpg';
                 break;
               case 'webp':
-                fileName += '.webp';
+                extension = '.webp';
                 break;
               default:
-                // Si pas d'extension spécifiée, ne rien ajouter
+                extension = '';
                 break;
             }
             
-            filePath = `assets/documents/${projectFolder}/${fileName}`;
+            filePath = `assets/documents/${projectFolder}/${fileName}${extension}`;
           }
           
-          // Définir les attributs du lien
           docLink.href = filePath;
           docLink.className = 'document-link';
           
-          // Ajouter l'attribut download pour les fichiers à télécharger
+          // Pour les fichiers texte, ajouter l'attribut download
           if (['pdf', 'md', 'markdown', 'python', 'js', 'javascript', 'html', 'css'].includes(doc.type?.toLowerCase())) {
             docLink.setAttribute('download', '');
           }
           
           // Pour les images, ouvrir dans un nouvel onglet
-          if (['image', 'images', 'png', 'jpg', 'jpeg', 'webp'].includes(doc.type?.toLowerCase())) {
-            docLink.setAttribute('target', '_blank');
+          // Remplacez ou modifiez cette partie dans la fonction openProjectModal
+// Pour les images, ajouter un gestionnaire pour ouvrir la popup au lieu d'un nouvel onglet
+if (['image', 'images', 'png', 'jpg', 'jpeg', 'webp'].includes(doc.type?.toLowerCase())) {
+  docLink.removeAttribute('target');
+  docLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    const popup = document.getElementById('image-popup-overlay');
+    const popupImg = document.getElementById('popup-image');
+    const popupCaption = document.getElementById('popup-caption');
+    
+    popupImg.src = this.href;
+    popupCaption.textContent = buttonText;
+    popup.style.display = 'block';
+  });
+}
+          
+          // Déterminer l'icône appropriée
+          let iconClass = 'fa-file';
+          if (doc.icon) {
+            iconClass = doc.icon;
+          } else {
+            // Icônes par défaut selon le type
+            switch (doc.type?.toLowerCase()) {
+              case 'pdf':
+                iconClass = 'fa-file-pdf';
+                break;
+              case 'md':
+              case 'markdown':
+                iconClass = 'fa-file-alt';
+                break;
+              case 'python':
+              case 'js':
+              case 'javascript':
+              case 'html':
+              case 'css':
+                iconClass = 'fa-file-code';
+                break;
+              case 'image':
+              case 'images':
+              case 'png':
+              case 'jpg':
+              case 'jpeg':
+              case 'webp':
+                iconClass = 'fa-file-image';
+                break;
+            }
           }
           
-          // Ajouter l'icône en fonction du type de document
-          const iconClass = doc.icon || 'fa-file';
-          docLink.innerHTML = `<i class="far ${iconClass}"></i> ${doc.name}${doc.type ? ` (${doc.type})` : ''}`;
+          // Personnaliser le texte du bouton selon le type de document
+          let buttonText = doc.name;
+          if (doc.type) {
+            if (doc.type.toLowerCase() === 'md' || doc.type.toLowerCase() === 'markdown') {
+              buttonText = `Documentation ${doc.name}`;
+            } else if (doc.type.toLowerCase() === 'pdf') {
+              buttonText = `PDF: ${doc.name}`;
+            } else if (doc.type.toLowerCase() === 'python') {
+              buttonText = `Code source: ${doc.name}`;
+            } else if (['image', 'png', 'jpg', 'jpeg', 'webp'].includes(doc.type.toLowerCase())) {
+              buttonText = `Image: ${doc.name}`;
+            } else if (doc.type.toLowerCase() === 'js' || doc.type.toLowerCase() === 'javascript') {
+              buttonText = `Script: ${doc.name}`;
+            } else if (doc.type.toLowerCase() === 'html') {
+              buttonText = `HTML: ${doc.name}`;
+            } else if (doc.type.toLowerCase() === 'css') {
+              buttonText = `Style: ${doc.name}`;
+            }
+          }
           
-          // Ajouter un gestionnaire d'événements pour les erreurs de chargement
-          docLink.addEventListener('error', function(e) {
-            console.warn(`Le document ${doc.name} n'a pas pu être chargé:`, filePath);
-          });
+          // Créer le contenu du lien avec icône
+          docLink.innerHTML = `<i class="far ${iconClass}"></i> ${buttonText}`;
           
+          // Ajouter à la section des documents
           modalDocuments.appendChild(docLink);
         });
-      } else {
+      } else if (typeof projectDetails.documents === 'string') {
         // Format chaîne simple (pour la rétrocompatibilité)
         const documentItems = projectDetails.documents.split(',');
         documentItems.forEach(item => {
           const docName = item.trim();
           const docLink = document.createElement('a');
           
-          // Déterminer le dossier du projet
-          let projectFolder = projectDetails.title.toLowerCase().replace(/\s+/g, '_');
-          
-          // Adapter le dossier au format de votre arborescence
-          switch (projectFolder) {
-            case "optimisation_des_logiciels_entreprise":
-              projectFolder = 'optimisation_logiciels';
-              break;
-            case "développement_section_utilisateur_(app_mobile)":
-              projectFolder = 'section_utilisateur';
-              break;
-            case "mise_en_conformité_rgpd":
-              projectFolder = 'rgpd';
-              break;
-            // Ajoutez d'autres cas spécifiques si nécessaire
-          }
-          
-          // Lien générique
+          // Créer un chemin de fichier simple
           docLink.href = `assets/documents/${projectFolder}/${docName.toLowerCase().replace(/\s+/g, '_')}.pdf`;
           docLink.className = 'document-link';
           docLink.setAttribute('download', '');
-          docLink.innerHTML = `<i class="far fa-file"></i> ${docName}`;
+          docLink.innerHTML = `<i class="far fa-file-pdf"></i> Document: ${docName}`;
           
           modalDocuments.appendChild(docLink);
         });

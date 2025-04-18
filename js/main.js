@@ -28,9 +28,9 @@ const projectsData = [
       {name: "Code source", type: "python", icon: "fa-file-code", filename: "textadventure.py"}
     ],
     period: "Janvier - Mars 2023",
-    duration: "3 mois",
+    duration: "2 secondess",
     participants: 1,
-    rating: 4.5
+    rating: 2
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const projectsData = [
       {name: "README", type: "md", icon: "fa-file-alt", filename: "README.md"},
       {name: "Logo du projet", type: "image", icon: "fa-image", filename: "logo_jojolegion.png"}
     ],
-    period: "Avril - Juin 2023",
+    period: "A - Janvier 2025",
     duration: "3 mois",
     participants: 4,
     rating: 5
@@ -64,10 +64,10 @@ const projectsData = [
     documents: [
       {name: "Diagramme de cas d'utilisation", type: "image", icon: "fa-project-diagram", filename: "diagramme.png"}
     ],
-    period: "Septembre - Novembre 2023",
+    period: "Septembre - Avril 2025",
     duration: "3 mois",
-    participants: 2,
-    rating: 4
+    participants: 1,
+    rating: 3
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ const projectsData = [
     documents: [
       {name: "Maquette", type: "image", icon: "fa-file-image", filename: "maquette.png"}
     ],
-    period: "Octobre - Décembre 2023",
+    period: "Décembre - Mars 2025",
     duration: "3 mois",
     participants: 3,
     rating: 4.5
@@ -100,10 +100,10 @@ const projectsData = [
     documents: [
       {name: "Schéma explicatif", type: "image", icon: "fa-image", filename: "schema.png"}
     ],
-    period: "Janvier - Mars 2024",
+    period: "Janvier - Avril 2025",
     duration: "3 mois",
-    participants: 4,
-    rating: 5
+    participants: 1,
+    rating: 4
   },
   {
     id: 6,
@@ -120,10 +120,10 @@ const projectsData = [
       {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf", filename: "Cahier des charges — Billeterie *JO Tickets*.pdf"},
       {name: "README", type: "md", icon: "fa-file-alt", filename: "README_billeterie.md"}
     ],
-    period: "Février - Avril 2024",
-    duration: "3 mois",
-    participants: 2,
-    rating: 4
+    period: "2 semaines",
+    duration: "2 semaines",
+    participants: 1,
+    rating: 2
   },
   
   // Projets Professionnels
@@ -131,26 +131,26 @@ const projectsData = [
     id: 7,
     title: "Optimisation des logiciels entreprise",
     description: {
-      short: "Analyse et amélioration des performances des applications internes de l'entreprise.",
-      long: "Analyse et amélioration des performances des applications internes de l'entreprise. J'ai audité les applications existantes, identifié les goulots d'étranglement et implémenté des solutions pour améliorer significativement les temps de réponse et l'expérience utilisateur."
+      short: "Optimisation des performances et de l’ergonomie d’un logiciel interne pour améliorer l’efficacité des utilisateurs.",
+      long: "Optimisation des performances et de l’ergonomie d’un logiciel interne pour améliorer l’efficacité des utilisateurs."
     },
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
-    tags: ["Optimisation", "Performance", "Analyse", "Refactoring"],
+    tags: ["Optimisation", "Analyse"],
     documents: [
       {name: "Présentation", type: "image", icon: "fa-file-powerpoint", filename: "presentation.png"}
     ],
-    period: "Mai - Juin 2024",
+    period: "1 mois",
     duration: "2 mois",
-    participants: 3,
-    rating: 4.5
+    participants: 2,
+    rating: 3
   },
   {
     id: 8,
     title: "Mission de sondages",
     description: {
-      short: "Conception et déploiement de formulaires de sondage pour recueillir des données clients.",
-      long: "Conception et déploiement de formulaires de sondage pour recueillir des données clients. J'ai créé un système complet allant de la conception des questionnaires à l'analyse automatisée des résultats, permettant à l'entreprise de mieux comprendre les besoins de sa clientèle."
+      short: "Développement d'une interface de sondage dans le cadre du développement des outils de l'entreprise.",
+      long: "Développement d'une interface de sondage dans le cadre du développement des outils de l'entreprise."
     },
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
@@ -158,53 +158,51 @@ const projectsData = [
     documents: [
       {name: "Exemple de sondage", type: "image", icon: "fa-file-image", filename: "sondage.png"}
     ],
-    period: "Juin - Juillet 2024",
-    duration: "2 mois",
+    period: "3 mois",
+    duration: "3 mois",
     participants: 2,
-    rating: 4
+    rating: 4.5
   },
   {
     id: 9,
     title: "Développement section utilisateur (App mobile)",
     description: {
-      short: "Conception et implémentation du module utilisateur pour l'application mobile de l'entreprise.",
-      long: "Conception et implémentation du module utilisateur pour l'application mobile de l'entreprise. J'ai développé toute la partie gestion de profil, authentification et paramètres personnalisés pour améliorer l'expérience utilisateur de l'application."
+      short: "Maquette d'une section de l'application mobile permettant aux employés de consulter leurs fiches de paie et autres documents liés à l'entreprise (attestation France Travail)",
+      long: "Maquette d'une section de l'application mobile permettant aux employés de consulter leurs fiches de paie et autres documents liés à l'entreprise (attestation France Travail)"
     },
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
-    tags: ["Mobile", "UI/UX", "Base de données", "Authentification"],
+    tags: ["Mobile", "Design", "HTML/CSS", "JavaScript"],
     documents: [
       {name: "Maquette interface", type: "image", icon: "fa-mobile-alt", filename: "interface.png"}
     ],
-    period: "Juillet - Septembre 2024",
-    duration: "3 mois",
-    participants: 4,
-    rating: 4.5
+    period: "2 semaines",
+    duration: "2 semaines",
+    participants: 2,
+    rating: 4
   },
   {
     id: 10,
     title: "Mise en conformité RGPD",
     description: {
-      short: "Audit et mise en conformité des systèmes informatiques avec la réglementation RGPD.",
-      long: "Audit et mise en conformité des systèmes informatiques avec la réglementation RGPD. J'ai analysé l'ensemble des processus de collecte et de stockage des données personnelles, et mis en place des solutions pour assurer la conformité avec les exigences légales."
-    },
+      short: "Mise à jour du registre de traitement de données de l'entreprise."},
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
-    tags: ["RGPD", "Sécurité", "Documentation", "Audit"],
+    tags: ["RGPD", "Sécurité", "Documentation", "Données"],
     documents: [
       {name: "Extrait registre", type: "image", icon: "fa-clipboard-list", filename: "registre.png"}
     ],
-    period: "Septembre - Octobre 2024",
+    period: "2 mois",
     duration: "2 mois",
     participants: 2,
-    rating: 4
+    rating: 2
   },
   {
     id: 11,
     title: "Refonte graphique application mobile",
     description: {
-      short: "Modernisation de l'interface utilisateur de l'application mobile selon les nouvelles normes UX.",
-      long: "Modernisation de l'interface utilisateur de l'application mobile selon les nouvelles normes UX. J'ai repensé l'ensemble de l'expérience utilisateur et de l'interface graphique pour améliorer l'ergonomie, l'accessibilité et l'aspect visuel de l'application."
+      short: "Refonte et modernisation graphique de l'application mobile.",
+      long: "Refonte et modernisation graphique de l'application mobile."
     },
     category: "Professionnel",
     image: "assets/images/projet-placeholder.jpg",
@@ -214,7 +212,7 @@ const projectsData = [
     ],
     period: "Octobre - Novembre 2024",
     duration: "2 mois",
-    participants: 3,
+    participants: 2,
     rating: 5
   }
 ];

@@ -22,10 +22,10 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Python", "Jeu", "Manga", "Scripte"],
     documents: [
-      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf", filename: "Cahier des charges — textadventure.pdf"},
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "READMEtextadventure.md"},
-      {name: "Capture d'écran", type: "image", icon: "fa-image", filename: "textadventure.png"},
-      {name: "Code source", type: "python", icon: "fa-file-code", filename: "textadventure.py"}
+      {name: "Cahier des charges", type: "pdf", icon: "fa-file-pdf", filename: "../textadventure/Cahier des charges — textadventure.pdf"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "../textadventure/READMEtextadventure.md"},
+      {name: "Capture d'écran", type: "image", icon: "fa-image", filename: "../textadventure/textadventure.png"},
+      {name: "Code source", type: "python", icon: "fa-file-code", filename: "../textadventure/textadventure.py"}
     ],
     period: "Janvier - Mars 2023",
     duration: "2 secondess",
@@ -43,8 +43,11 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["HTML/CSS", "JavaScript", "Django", "Base de données", "Travail d'équipe", "API Jikan", "Site communautaire"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_Jojolegion.md"},
-      {name: "Logo du projet", type: "image", icon: "fa-image", filename: "logo_jojolegion.png"}
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "../jojolegion/README_Jojolegion.md"},
+      {name: "Charte graphique", type: "pdf", icon: "fa-file-alt", filename: "../jojolegion/Diagramme de base de donnees Jojolegion.png"},
+      {name: "Logo du projet", type: "image", icon: "fa-image", filename: "../jojolegion/logo_jojolegion.png"},
+      {name: "Diagramme de bdd", type: "png", icon: "fa-file-alt", filename: "../jojolegion/README_Jojolegion.md"},
+      {name: "Aperçu JojoLegion", type: "png", icon: "fa-file-alt", filename: "../jojolegion/aperçu jojo.png"},
     ],
     period: "A - Janvier 2025",
     duration: "3 mois",
@@ -62,7 +65,7 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["React/TypeScript", "Gestion", "EPI", "Automatisation"],
     documents: [
-      {name: "Diagramme de cas d'utilisation", type: "image", icon: "fa-project-diagram", filename: "diagramme.png"}
+      {name: "Diagramme de cas d'utilisation", type: "image", icon: "fa-project-diagram", filename: "../gestepi/diagramme_de_cas_utilisation_GestEPI.png"}
     ],
     period: "Septembre - Avril 2025",
     duration: "3 mois",
@@ -80,9 +83,10 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["JavaFX", "Maquettage", "Harry Potter", "SceneBuilder", "Planification"],
     documents: [
-      {name: "Cahier Techniques", type: "md", icon: "fa-file-alt", filename: "cahier techniques.md"},
-      {name: "Modèle Relationnel", type: "md", icon: "fa-file-alt", filename: "Modèle Relationnel (1).md"},
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "README (3).md"}
+      {name: "Cahier Techniques", type: "md", icon: "fa-file-alt", filename: "../nimbus_railway/cahier techniques.md"},
+      {name: "Modèle Relationnel", type: "md", icon: "fa-file-alt", filename: "../nimbus_railway/Modèle Relationnel (1).md"},
+      {name: "Maquette", type: "pdf", icon: "fa-file-alt", filename: "../nimbus_railway/NR_Maquette.pdf"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "README (3).md"},
     ],
     period: "Décembre - Mars 2025",
     duration: "3 mois",
@@ -100,7 +104,9 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Django", "Application", "QR Code", "Gestion", "Authentification", "JO2024"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_projet_JO_Ticket.md"}
+      {name: "Aperçu du Projet", type: "png", icon: "fa-file-alt", filename: "../projet_jo_ticket/Aperçu_Projet_Jo_Ticket.png"},
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "../projet_jo_ticket/README_projet_JO_Ticket.md"},
+      {name: "Schema du Projet", type: "md", icon: "fa-file-alt", filename: "../projet_jo_ticket/Schema Projet JO.png"},
     ],
     period: "Janvier - Avril 2025",
     duration: "3 mois",
@@ -118,8 +124,9 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Python", "Automatisation", "Sécurité", "QR Code", "JSON", "Paris 2024"],
     documents: [
-      {name: "README", type: "md", icon: "fa-file-alt", filename: "README_billeterie.md"},
-      {name: "Code source", type: "python", icon: "fa-file-code", filename: "billetterie.py"}
+      {name: "README", type: "md", icon: "fa-file-alt", filename: "../generation_de_ticket_jo/README_billeterie.md"},
+      {name: "Cahier des Charges", type: "pdf", icon: "fa-file-code", filename: "../generation_de_ticket_jo/billetterie.py"},
+      {name: "Code source", type: "python", icon: "fa-file-code", filename: "../generation_de_ticket_jo/Cahier des charges — Billeterie _JO Tickets_.pdf"},
     ],
     period: "2 semaines",
     duration: "2 semaines",
@@ -139,7 +146,9 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Optimisation", "Analyse"],
     documents: [
-      {name: "Présentation", type: "image", icon: "fa-file-powerpoint", filename: "presentation.png"}
+      {name: "Présentation 1", type: "png", icon: "fa-file-powerpoint", filename: "../optimisation_logiciels/update flex (1).png"},
+      {name: "Présentation 2", type: "png", icon: "fa-file-powerpoint", filename: "../optimisation_logiciels/update flex (2).png"},
+      {name: "Présentation 3", type: "png", icon: "fa-file-powerpoint", filename: "../optimisation_logiciels/update flex (3).png"},
     ],
     period: "1 mois",
     duration: "2 mois",
@@ -157,7 +166,11 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Google Forms", "Analyse de données", "UX", "Automatisation"],
     documents: [
-      {name: "Exemple de sondage", type: "image", icon: "fa-file-image", filename: "sondage.png"}
+      {name: "Cahier des Charges", type: "pdf", icon: "fa-file-image", filename: "../mission_de_sondages/cdc_sondages (3) (1).pdf"},
+      {name: "Message de Lancement", type: "pdf", icon: "fa-file-image", filename: "../mission_de_sondages/message lancement sondage.pdf"},
+      {name: "Extrait Sondage", type: "jpeg", icon: "fa-file-image", filename: "../mission_de_sondages/screenshot_sondage.jpeg"},
+      {name: "Maquette du Sondage 1", type: "jpeg", icon: "fa-file-image", filename: "../mission_de_sondages/Sondage_maquette_1.jpeg"},
+      {name: "Maquette du Sondage 2", type: "jpeg", icon: "fa-file-image", filename: "../mission_de_sondages/Sondage_maquette_2.jpeg"},
     ],
     period: "3 mois",
     duration: "3 mois",
@@ -175,7 +188,10 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Mobile", "Design", "HTML/CSS", "JavaScript"],
     documents: [
-      {name: "Modèle relationnel", type: "md", icon: "fa-file-alt", filename: "modele relationnel utilisateur.md"}
+      {name: "Cahier des Charges", type: "pdf", icon: "fa-file-alt", filename: "../section_utilisateur/cdc_section_utilisateur (1).pdf"},
+      {name: "Message de lancement", type: "pdf", icon: "fa-file-alt", filename: "../section_utilisateur/message lancement section utilisateur.pdf"},
+      {name: "Modèle relationnel", type: "md", icon: "fa-file-alt", filename: "../section_utilisateur/modele relationnel utilisateur.md"},
+      {name: "Extrait section utilisateur", type: "jpeg", icon: "fa-file-alt", filename: "../section_utilisateur/Section_utilisateur.jpeg"},
     ],
     period: "2 semaines",
     duration: "2 semaines",
@@ -209,7 +225,11 @@ const projectsData = [
     image: "assets/images/projet-placeholder.jpg",
     tags: ["Design", "Mobile", "Accessibilité"],
     documents: [
-      {name: "Comparaison avant-après", type: "image", icon: "fa-images", filename: "comparaison.png"}
+      {name: "Cahier des Charges", type: "pdf", icon: "fa-images", filename: "../refonte_graphique/cdc_ref.pdf"},
+      {name: "Charte Graphique", type: "pdf", icon: "fa-images", filename: "../refonte_graphique/charte graphique flex-flux.pdf"},
+      {name: "Extrait de code", type: "jpeg", icon: "fa-images", filename: "../refonte_graphique/screenshot_refonte.jpeg"},
+      {name: "Aperçu Après", type: "jpeg", icon: "fa-images", filename: "../refonte_graphique/Refonte_graphique_appli.jpeg"},
+      {name: "Aperçu Avant", type: "jpeg", icon: "fa-images", filename: "../refonte_graphique/Refonte_graphique_appli.jpeg"},
     ],
     period: "Octobre - Novembre 2024",
     duration: "2 mois",
@@ -1469,100 +1489,116 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Fonction à ajouter à la fin de votre fichier main.js
+// SOLUTION D'URGENCE - REMPLACEZ TOUT CODE PRÉCÉDENT PAR CELUI-CI
 document.addEventListener('DOMContentLoaded', function() {
+  // Cette fonction s'exécute dès que la page est chargée
   // Vérifier si nous sommes sur la page de réalisations
-  if (window.location.pathname.includes('realisations.html')) {
-    // S'assurer que la fonction openProjectModal est disponible
-    if (typeof window.openProjectModal === 'function') {
-      // Sauvegarder la fonction originale
-      const originalOpenModal = window.openProjectModal;
-      
-      // Remplacer la fonction openProjectModal
-      window.openProjectModal = function(projectId) {
-        // Appeler la fonction originale d'abord
+  if (window.location.pathname.includes('realisations') || document.querySelector('.projects-grid')) {
+    // L'ancienne fonction openProjectModal
+    const originalOpenModal = window.openProjectModal;
+    
+    // Nouvelle fonction qui remplace l'ancienne
+    window.openProjectModal = function(projectId) {
+      // Appeler la fonction d'origine
+      if (typeof originalOpenModal === 'function') {
         originalOpenModal(projectId);
+      }
+      
+      // Attendre que la modale soit chargée
+      setTimeout(function() {
+        // Trouver le projet concerné
+        const project = projectsData.find(p => p.id === parseInt(projectId));
+        if (!project || !project.documents) return;
         
-        setTimeout(() => {
-          try {
-            console.log("Ouverture du projet ID:", projectId);
+        // Trouver la section des documents
+        const documentsSection = document.querySelector('.documents-section');
+        if (!documentsSection) return;
+        
+        // Supprimer tous les liens existants pour repartir de zéro
+        const existingLinks = documentsSection.querySelectorAll('.document-link');
+        existingLinks.forEach(link => link.remove());
+        
+        // Titre de la section
+        const docTitle = document.createElement('h3');
+        docTitle.textContent = "Documents associés";
+        documentsSection.appendChild(docTitle);
+        
+        // Trouver le dossier du projet en se basant sur le titre
+        const projectName = project.title;
+        let projectFolder = "";
+        
+        // Dossiers connus
+        const knownFolders = {
+          "TextAdventure": "textadventure",
+          "JojoLegion": "jojolegion",
+          "GestEPI": "gestepi",
+          "Nimbus Railway": "nimbus_railway",
+          "Projet JO Ticket": "projet_jo_ticket",
+          "Génération de Ticket JO": "generation_de_ticket_jo"
+        };
+        
+        // Déterminer le bon dossier
+        if (knownFolders[projectName]) {
+          projectFolder = knownFolders[projectName];
+        } else {
+          // Fallback: normaliser le nom du projet
+          projectFolder = projectName.toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, '_');
+        }
+        
+        // Créer un lien pour chaque document
+        project.documents.forEach(doc => {
+          // Dossier du projet
+          const baseUrl = `assets/documents/${projectFolder}/`;
+          
+          // Créer le lien
+          const link = document.createElement('a');
+          link.className = "document-link";
+          link.target = "_blank"; // Ouvrir dans un nouvel onglet
+          
+          // Déterminer l'URL du document
+          if (doc.filename) {
+            link.href = baseUrl + doc.filename;
+          } else {
+            // Si pas de nom de fichier spécifié, créer un nom basé sur le nom du document
+            const fileName = doc.name
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .replace(/\s+/g, '_');
             
-            // Trouver le projet correspondant à l'ID spécifié
-            const project = projectsData.find(p => p.id === parseInt(projectId));
-            if (!project) {
-              console.error("Projet non trouvé avec l'ID:", projectId);
-              return;
+            // Ajouter une extension selon le type
+            let extension = '';
+            switch (doc.type) {
+              case 'md': extension = '.md'; break;
+              case 'pdf': extension = '.pdf'; break;
+              case 'python': extension = '.py'; break;
+              case 'image': extension = '.png'; break;
+              default: extension = '';
             }
             
-            console.log("Projet trouvé:", project.title);
-            
-            // Table de correspondance des dossiers
-            const folderMapping = {
-              "TextAdventure": "textadventure",
-              "JojoLegion": "jojolegion",
-              "GestEPI": "gestepi",
-              "Nimbus Railway": "nimbus_railway",
-              "Projet JO Ticket": "projet_jo_ticket",
-              "Génération de Ticket JO": "generation_de_ticket_jo",
-              "Mission de sondages": "mission_de_sondages",
-              "Développement section utilisateur (App mobile)": "section_utilisateur",
-              "Refonte graphique application mobile": "refonte_graphique"
-            };
-            
-            // Déterminer le dossier du projet
-            let projectFolder = "";
-            if (folderMapping[project.title]) {
-              projectFolder = folderMapping[project.title];
-              console.log("Dossier mappé:", projectFolder);
-            } else {
-              projectFolder = project.title.toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .replace(/[^a-z0-9]+/g, '_');
-              console.log("Dossier normalisé:", projectFolder);
-            }
-            
-            // Vérifier la section des documents
-            const documentsSection = document.querySelector('.documents-section');
-            if (!documentsSection) {
-              console.error("Section de documents non trouvée");
-              return;
-            }
-            
-            // Supprimer tout bouton existant pour éviter les doublons
-            const existingButtons = documentsSection.querySelectorAll('.open-folder-btn');
-            existingButtons.forEach(btn => btn.remove());
-            
-            // Créer le nouveau bouton
-            const openButton = document.createElement('a');
-            openButton.href = `assets/documents/${projectFolder}/`;
-            openButton.target = "_blank";
-            openButton.className = "document-link open-folder-btn";
-            openButton.innerHTML = '<i class="fas fa-folder-open"></i> Ouvrir tous les fichiers dans une nouvelle page';
-            openButton.style.display = 'block';
-            openButton.style.width = '100%';
-            openButton.style.marginTop = '1rem';
-            openButton.style.textAlign = 'center';
-            openButton.style.background = 'var(--primary-light)';
-            
-            // Ajouter l'attribut data pour le débogage
-            openButton.setAttribute('data-project', project.title);
-            openButton.setAttribute('data-folder', projectFolder);
-            
-            // Ajouter le bouton en haut de la section documents
-            const docsTitle = documentsSection.querySelector('h3');
-            if (docsTitle) {
-              documentsSection.insertBefore(openButton, docsTitle.nextSibling);
-            } else {
-              documentsSection.prepend(openButton);
-            }
-            
-            console.log("Bouton ajouté avec succès pour le dossier:", projectFolder);
-          } catch (error) {
-            console.error("Erreur lors de l'ajout du bouton d'ouverture de dossier:", error);
+            link.href = baseUrl + fileName + extension;
           }
-        }, 300); // Délai augmenté pour s'assurer que le DOM est complètement prêt
-      };
-    }
+          
+          // Déterminer l'icône selon le type
+          let iconClass = 'fa-file';
+          switch (doc.type) {
+            case 'md': iconClass = 'fa-file-alt'; break;
+            case 'pdf': iconClass = 'fa-file-pdf'; break;
+            case 'python': iconClass = 'fa-file-code'; break;
+            case 'image': iconClass = 'fa-file-image'; break;
+            default: iconClass = doc.icon || 'fa-file';
+          }
+          
+          // Créer le contenu du lien avec icône
+          link.innerHTML = `<i class="far ${iconClass}"></i> ${doc.name}`;
+          
+          // Ajouter à la section
+          documentsSection.appendChild(link);
+        });
+      }, 300);
+    };
   }
 });
